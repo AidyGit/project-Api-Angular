@@ -1,0 +1,394 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|e:\\project\\project\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|solutionrelative:project\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|e:\\project\\project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|solutionrelative:project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|e:\\project\\project\\project.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|solutionrelative:project\\project.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|e:\\project\\project\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|solutionrelative:project\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|e:\\project\\project\\customer\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|solutionrelative:project\\customer\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|e:\\project\\project\\migrations\\20251228162627_initalcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|solutionrelative:project\\migrations\\20251228162627_initalcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|e:\\project\\project\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|solutionrelative:project\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|e:\\project\\project\\customer\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|solutionrelative:project\\customer\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|e:\\project\\project\\customer\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|solutionrelative:project\\customer\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|e:\\project\\project\\customer\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|solutionrelative:project\\customer\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|e:\\project\\project\\customer\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|solutionrelative:project\\customer\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|e:\\project\\project\\manage\\models\\randonmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|solutionrelative:project\\manage\\models\\randonmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|e:\\project\\project\\customer\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|solutionrelative:project\\customer\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|e:\\project\\project\\manage\\models\\purchasesmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|solutionrelative:project\\manage\\models\\purchasesmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|e:\\project\\project\\manage\\models\\donationsmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|solutionrelative:project\\manage\\models\\donationsmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|e:\\project\\project\\customer\\models\\shoppingcartmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|solutionrelative:project\\customer\\models\\shoppingcartmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|e:\\project\\project\\project.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|solutionrelative:project\\project.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|e:\\project\\project\\customer\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|solutionrelative:project\\customer\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|e:\\project\\project\\customer\\models\\giftshoppingcartmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|solutionrelative:project\\customer\\models\\giftshoppingcartmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|e:\\project\\project\\manage\\dto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|solutionrelative:project\\manage\\dto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|e:\\project\\project\\manage\\models\\donorsmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|solutionrelative:project\\manage\\models\\donorsmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|e:\\project\\project\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{281B2A2E-31F8-4CF1-8691-6096016E9AAB}|project\\project.csproj|solutionrelative:project\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "E:\\project\\project\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "project\\Properties\\launchSettings.json",
+              "ToolTip": "E:\\project\\project\\Properties\\launchSettings.json",
+              "RelativeToolTip": "project\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-28T16:41:30.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\project\\project\\Program.cs",
+              "RelativeDocumentMoniker": "project\\Program.cs",
+              "ToolTip": "E:\\project\\project\\Program.cs",
+              "RelativeToolTip": "project\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T21:35:45.184Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "E:\\project\\project\\Customer\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "project\\Customer\\Services\\UserService.cs",
+              "ToolTip": "E:\\project\\project\\Customer\\Services\\UserService.cs",
+              "RelativeToolTip": "project\\Customer\\Services\\UserService.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAArwBoAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T13:46:47.775Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "E:\\project\\project\\Customer\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "project\\Customer\\Repositories\\UserRepository.cs",
+              "ToolTip": "E:\\project\\project\\Customer\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "project\\Customer\\Repositories\\UserRepository.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAwwBkAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T14:19:55.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "E:\\project\\project\\Customer\\Interfaces\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "project\\Customer\\Interfaces\\IUserRepository.cs",
+              "ToolTip": "E:\\project\\project\\Customer\\Interfaces\\IUserRepository.cs",
+              "RelativeToolTip": "project\\Customer\\Interfaces\\IUserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T14:10:13.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UserModel.cs",
+              "DocumentMoniker": "E:\\project\\project\\Customer\\Models\\UserModel.cs",
+              "RelativeDocumentMoniker": "project\\Customer\\Models\\UserModel.cs",
+              "ToolTip": "E:\\project\\project\\Customer\\Models\\UserModel.cs",
+              "RelativeToolTip": "project\\Customer\\Models\\UserModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBAAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T20:47:05.174Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\project\\project\\appsettings.json",
+              "RelativeDocumentMoniker": "project\\appsettings.json",
+              "ToolTip": "E:\\project\\project\\appsettings.json",
+              "RelativeToolTip": "project\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAACdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-27T21:36:15.025Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "E:\\project\\project\\Customer\\Interfaces\\IUserService.cs",
+              "RelativeDocumentMoniker": "project\\Customer\\Interfaces\\IUserService.cs",
+              "ToolTip": "E:\\project\\project\\Customer\\Interfaces\\IUserService.cs",
+              "RelativeToolTip": "project\\Customer\\Interfaces\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T13:49:51.964Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "project.http",
+              "DocumentMoniker": "E:\\project\\project\\project.http",
+              "RelativeDocumentMoniker": "project\\project.http",
+              "ToolTip": "E:\\project\\project\\project.http",
+              "RelativeToolTip": "project\\project.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-12-18T12:25:44.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "20251228162627_initalCreate.cs",
+              "DocumentMoniker": "E:\\project\\project\\Migrations\\20251228162627_initalCreate.cs",
+              "RelativeDocumentMoniker": "project\\Migrations\\20251228162627_initalCreate.cs",
+              "ToolTip": "E:\\project\\project\\Migrations\\20251228162627_initalCreate.cs",
+              "RelativeToolTip": "project\\Migrations\\20251228162627_initalCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T16:26:28.361Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "E:\\project\\project\\Customer\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "project\\Customer\\Controllers\\UserController.cs",
+              "ToolTip": "E:\\project\\project\\Customer\\Controllers\\UserController.cs",
+              "RelativeToolTip": "project\\Customer\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T13:15:50.7Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "E:\\project\\project\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "project\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "E:\\project\\project\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "project\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA1wBMAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T14:28:04.46Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RandonModel.cs",
+              "DocumentMoniker": "E:\\project\\project\\Manage\\Models\\RandonModel.cs",
+              "RelativeDocumentMoniker": "project\\Manage\\Models\\RandonModel.cs",
+              "ToolTip": "E:\\project\\project\\Manage\\Models\\RandonModel.cs",
+              "RelativeToolTip": "project\\Manage\\Models\\RandonModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T20:21:19.549Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "PurchasesModel.cs",
+              "DocumentMoniker": "E:\\project\\project\\Manage\\Models\\PurchasesModel.cs",
+              "RelativeDocumentMoniker": "project\\Manage\\Models\\PurchasesModel.cs",
+              "ToolTip": "E:\\project\\project\\Manage\\Models\\PurchasesModel.cs",
+              "RelativeToolTip": "project\\Manage\\Models\\PurchasesModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T20:12:40.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "project.csproj",
+              "DocumentMoniker": "E:\\project\\project\\project.csproj",
+              "RelativeDocumentMoniker": "project\\project.csproj",
+              "ToolTip": "E:\\project\\project\\project.csproj",
+              "RelativeToolTip": "project\\project.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-28T14:31:54.26Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ShoppingCartModel.cs",
+              "DocumentMoniker": "E:\\project\\project\\Customer\\Models\\ShoppingCartModel.cs",
+              "RelativeDocumentMoniker": "project\\Customer\\Models\\ShoppingCartModel.cs",
+              "ToolTip": "E:\\project\\project\\Customer\\Models\\ShoppingCartModel.cs",
+              "RelativeToolTip": "project\\Customer\\Models\\ShoppingCartModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T20:57:08.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "DonationsModel.cs",
+              "DocumentMoniker": "E:\\project\\project\\Manage\\Models\\DonationsModel.cs",
+              "RelativeDocumentMoniker": "project\\Manage\\Models\\DonationsModel.cs",
+              "ToolTip": "E:\\project\\project\\Manage\\Models\\DonationsModel.cs",
+              "RelativeToolTip": "project\\Manage\\Models\\DonationsModel.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAQwBQAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T12:49:20.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "E:\\project\\project\\Customer\\Dtos\\UserDto.cs",
+              "RelativeDocumentMoniker": "project\\Customer\\Dtos\\UserDto.cs",
+              "ToolTip": "E:\\project\\project\\Customer\\Dtos\\UserDto.cs",
+              "RelativeToolTip": "project\\Customer\\Dtos\\UserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T13:23:19.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "DonorsModel.cs",
+              "DocumentMoniker": "E:\\project\\project\\Manage\\Models\\DonorsModel.cs",
+              "RelativeDocumentMoniker": "project\\Manage\\Models\\DonorsModel.cs",
+              "ToolTip": "E:\\project\\project\\Manage\\Models\\DonorsModel.cs",
+              "RelativeToolTip": "project\\Manage\\Models\\DonorsModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T12:36:40.466Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "GiftShoppingCartModel.cs",
+              "DocumentMoniker": "E:\\project\\project\\Customer\\Models\\GiftShoppingCartModel.cs",
+              "RelativeDocumentMoniker": "project\\Customer\\Models\\GiftShoppingCartModel.cs",
+              "ToolTip": "E:\\project\\project\\Customer\\Models\\GiftShoppingCartModel.cs",
+              "RelativeToolTip": "project\\Customer\\Models\\GiftShoppingCartModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T21:06:18.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Dto.cs",
+              "DocumentMoniker": "E:\\project\\project\\Manage\\Dto.cs",
+              "RelativeDocumentMoniker": "project\\Manage\\Dto.cs",
+              "ToolTip": "E:\\project\\project\\Manage\\Dto.cs",
+              "RelativeToolTip": "project\\Manage\\Dto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-27T21:40:46.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "E:\\project\\project\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "project\\WeatherForecast.cs",
+              "ToolTip": "E:\\project\\project\\WeatherForecast.cs",
+              "RelativeToolTip": "project\\WeatherForecast.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T12:25:34.612Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
