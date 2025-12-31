@@ -20,6 +20,47 @@ namespace project.Data
         public DbSet<PurchasesModel> PurchasesModel { get; set; }
         public DbSet<RandonModel> RandonModel { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
 
+            //customer validation
+            modelBuilder.Entity<UserModel>(e =>
+            {
+                e.Property(e => e.Name).IsRequired().HasMaxLength(50);
+                e.Property(e => e.Email);
+                e.Property(e => e.UserName).IsRequired().HasMaxLength(50);
+                e.Property(e => e.Password).IsRequired();
+                e.Property(e => e.Phone).HasMaxLength(10);
+
+                e.HasMany(u => u.Purchases)
+                 .WithOne(p => p.User)
+                 .HasForeignKey(p => p.UserId)
+                 .OnDelete(DeleteBehavior.Restrict);
+                e.HasMany(u => u.ShoppingCarts)
+                 .WithOne(s => s.User)
+                 .HasForeignKey(s => s.UserId)
+                 .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            //manage validation
+            modelBuilder.Entity<DonationsModel>(e =>
+            {
+                e.Property(e => e.Name).IsRequired().HasMaxLength(100);
+                //לבדוק אם נכון לעשות INT
+                e.Property(e => e.PriceTiket).IsRequired();
+            });
+
+            modelBuilder.Entity<DonorsModel>(e =>
+            {
+                e.Property(e => e.Name).IsRequired().HasMaxLength(50);
+                e.Property(e => e.Email).IsRequired();
+                e.Property(e => e.Phone).HasMaxLength(10);
+            });
+            modelBuilder.Entity<CategoryModel>(e =>
+            {
+                e.Property(e => e.Name).IsRequired().HasMaxLength(50);
+            });
+        }
     }
 }

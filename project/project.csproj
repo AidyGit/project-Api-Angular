@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Manage\Controllers\**" />
+    <Content Remove="Manage\Controllers\**" />
+    <EmbeddedResource Remove="Manage\Controllers\**" />
+    <None Remove="Manage\Controllers\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.11" />
@@ -15,11 +22,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.6" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Manage\Dtos\" />
-    <Folder Include="Manage\Controllers\" />
   </ItemGroup>
 
   <ItemGroup>

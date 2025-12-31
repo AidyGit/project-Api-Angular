@@ -47,6 +47,11 @@ namespace project.Customer.Controllers
                 return BadRequest(new { message = ex.Message });
             }
         }
-
+        [HttpGet("AllUsers")]
+        public async Task<ActionResult<IEnumerable<UserDto.GetUserDto>>> GetAllUsers()
+        {
+            var users = await _userService.GetAllUsers();
+            return Ok(users);
+        }
     }
 }

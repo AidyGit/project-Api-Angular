@@ -10,6 +10,5 @@ namespace project.Models.Customer
         public DonationsModel? Donations { get; set; }
         public int ShoppingCartId { get; set; }
         public ShoppingCartModel? ShoppingCart { get; set; }
-
     }
 }

@@ -1,8 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using project.Customer.Interfaces;
+using project.Customer.Repositories;
 using project.Customer.Repository;
 using project.Customer.Services;
 using project.Data;
+using project.Manage.Interfaces;
+using project.Manage.Repository;
+using project.Manage.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,8 +17,7 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer("Server=Srv2\\pupils;DataBase=216259465_ChineseSale;Integrated Security=SSPI;Persist Security Info=False;TrustServerCertificate=True;"));
-
+    options.UseSqlServer("Server=DESKTOP-M9GE62O;DataBase=216259465_ChineseSale;Integrated Security=SSPI;Persist Security Info=False;TrustServerCertificate=True;"));
 
 
 //builder.Services.AddDbContext<MarketDbContext>(options =>
@@ -24,9 +27,21 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // Register services
 builder.Services.AddScoped<IUserService, UserService>();
 
-//Register Repo
+// Gift service
+builder.Services.AddScoped<IGiftService, GiftService>();
 
+//Gifts Repo
+builder.Services.AddScoped<IGiftRepository, GiftRepository>();
+
+//Register Repo
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+// Donors Service
+builder.Services.AddScoped<IDonorsService, DonorService>();
+
+// Donors Repo
+builder.Services.AddScoped<IDonorsRepository, DonorsRepository>();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

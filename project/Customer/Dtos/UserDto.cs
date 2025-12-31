@@ -29,5 +29,14 @@ namespace project.Customer.Dtos
             public string? Password { get; set; }
 
         }
+        public class GetUserDto()
+        {
+            public string? Name { get; set; }
+            public string? Email { get; set; }
+            public string? Phone { get; set; }
+            public string? UserName { get; set; }
+            public DateTime CreatedAt { get; set; } = DateTime.Now;
+
+        }
     }
 }

@@ -5,6 +5,7 @@ namespace project.Customer.Interfaces
     public interface IUserService
     {
         Task<UserDto.RegisterDto> CreateUser(UserDto.RegisterDto userDto);
+        Task<IEnumerable<UserDto.GetUserDto>> GetAllUsers();
         Task<UserDto.LoginDto> LoginUser(UserDto.LoginDto userDto);
 
         

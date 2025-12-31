@@ -56,6 +56,13 @@ namespace project.Customer.Services
             //    User = MapToResponseDto(user)
             //};
         }
+
+        public async Task<IEnumerable<UserDto.GetUserDto>> GetAllUsers()
+        {
+            var users = await _userRepository.GetAllUsers();
+            return users;
+        }
+
         private static UserDto.RegisterDto MapToUserDto(UserModel user)
         {
             return new UserDto.RegisterDto
