@@ -42,6 +42,12 @@ builder.Services.AddScoped<IDonorsService, DonorService>();
 // Donors Repo
 builder.Services.AddScoped<IDonorsRepository, DonorsRepository>();
 
+// Donation service
+builder.Services.AddScoped<IDonationService, DonationService>();
+
+//Donation Repo
+builder.Services.AddScoped<IDonationRepository, DonationRepository>();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
