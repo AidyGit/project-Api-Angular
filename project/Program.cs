@@ -17,7 +17,7 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer("Server=DESKTOP-M9GE62O;DataBase=216259465_ChineseSale;Integrated Security=SSPI;Persist Security Info=False;TrustServerCertificate=True;"));
+    options.UseSqlServer("Server=Srv2//pupils;DataBase=216259465_ChineseSale;Integrated Security=SSPI;Persist Security Info=False;TrustServerCertificate=True;"));
 
 
 //builder.Services.AddDbContext<MarketDbContext>(options =>
@@ -47,6 +47,13 @@ builder.Services.AddScoped<IDonationService, DonationService>();
 
 //Donation Repo
 builder.Services.AddScoped<IDonationRepository, DonationRepository>();
+
+// Donation Repo
+builder.Services.AddScoped<IPurchasesRepository, PurchasesRepository>();
+
+//Donation service
+builder.Services.AddScoped<IPurchasesService, PurchasesService>();
+
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

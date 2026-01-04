@@ -447,6 +447,37 @@
     ]
   },
   {
+    "ContainingType": "project.Manage.Controller.PurchasesController",
+    "Method": "GetPuchasesByDonation",
+    "RelativePath": "api/Purchases/Puchases/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "id",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "project.Manage.Dtos.GetDonationWithPurchase",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "project.Customer.Controllers.UserController",
     "Method": "GetAllUsers",
     "RelativePath": "api/User/AllUsers",

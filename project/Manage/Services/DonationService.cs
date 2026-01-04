@@ -61,6 +61,7 @@ namespace project.Manage.Services
                 donation.DonorsId = donationDto.DonorsId;
             else
                 donation.DonorsId = donation.DonorsId;
+
             var updatedDonation = new CreateDonationDto
             {
                 Name = donation.Name,
@@ -69,8 +70,8 @@ namespace project.Manage.Services
                 CategoryId = donation.CategoryId,
                 DonorsId = donation.DonorsId,
                 PriceTiket = donation.PriceTiket
-
             };
+
             await _donationRepository.UpdateDonation(donation);
             return updatedDonation;
 

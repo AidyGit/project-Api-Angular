@@ -66,14 +66,15 @@ namespace project.Manage.Repository
             return true;
         }
 
-        public async Task<DonationsModel> UpdateDonation(DonationsModel donationDto)
+        public async Task<DonationsModel> UpdateDonation(DonationsModel donation)
         {
             //ID חפוש במסד התונים את התרומה לפי ה
-            var existing = await _context.DonationsModel.FindAsync(donationDto.Id);
+            var existing = await _context.DonationsModel.FindAsync(donation.Id);
+
             if (existing == null) return null ;
 
             //עדכון הערכים של התרומה הקיימת עם הערכים החדשים מהאובייקט donationDto
-            _context.Entry(existing).CurrentValues.SetValues(donationDto);
+            _context.Entry(existing).CurrentValues.SetValues(donation);
 
             await _context.SaveChangesAsync();
             return existing;

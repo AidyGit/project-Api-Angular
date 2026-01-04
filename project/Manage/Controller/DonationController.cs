@@ -34,21 +34,23 @@ namespace project.Manage.Controller
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
-            //AddDonation
-            [HttpPost("AddDonation")]
-            public async Task<ActionResult<bool>> AddDonation([FromQuery] CreateDonationDto donationDto)
+        //AddDonation
+        [HttpPost("AddDonation")]
+        public async Task<ActionResult<bool>> AddDonation([FromQuery] CreateDonationDto donationDto)
+        {
+            try
             {
-                try
-                {
-                    return (Ok(await _donationService.AddDonation(donationDto)));
-                }
-                catch (Exception ex)
-                {
-                    return BadRequest(new { message = ex.Message });
-                }
+                return (Ok(await _donationService.AddDonation(donationDto)));
             }
-            [HttpDelete("DeleteDonation/{id}")]
-            public async Task<ActionResult> DeleteDonation([FromQuery] int id)
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+        [HttpDelete("DeleteDonation/{id}")]
+        public async Task<ActionResult> DeleteDonation([FromQuery] int id)
+        {
+            try
             {
                 var result = await _donationService.DeleteDonation(id);
                 if (result)
@@ -60,14 +62,27 @@ namespace project.Manage.Controller
                     return NotFound(new { message = "Donor not found." });
                 }
             }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+
+        }
         //UpdateDonation
         [HttpPut("UpdateDonation/{id}")]
-            public async Task<ActionResult<DonorsModel>> UpdateDonation([FromQuery] int id, CreateDonationDto donorToUp)
+        public async Task<ActionResult<DonorsModel>> UpdateDonation([FromQuery] int id, CreateDonationDto donorToUp)
+        {
+            try
             {
                 var donor = await _donationService.UpdateDonation(id, donorToUp);
                 return Ok(donor);
             }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
+    }
 
 
 }

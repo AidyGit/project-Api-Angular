@@ -146,20 +146,42 @@ namespace project.Customer.Repositories
             {
                 return false; // Return false if no matching cart is found
             }
+
             cart.Status = CartStatus.Purchased; // Update status to completed using the enum value
-            //var newPurchase = new PurchasesModel
-            //{
-            //    UserId = cart.UserId,
-            //    DonationId = cart.GiftShoppingCart.First().DonationId, // Assuming at least one item exists
-            //    ShoppingCartId = cartId,
-            //    PurchaseDate = DateTime.UtcNow
-            //};
+            
+            foreach (var item in cart.GiftShoppingCart)
+            {
+                if(item.Quantity > 1)
+                {
+                    for(int i=0;i< item.Quantity; i++)
+                    {
+                        _context.Add(new PurchasesModel
+                        {
+                            UserId = cart.UserId,
+                            DonationId = item.DonationId,
+                            //ShoppingCartId = cartId,
+                            PurchaseDate = DateTime.UtcNow
+                        });
+                    }
+                }
+                else
+                {
+                    _context.Add(new PurchasesModel
+                    {
+                        UserId = cart.UserId,
+                        DonationId = item.DonationId,
+                        //ShoppingCartId = cartId,
+                        PurchaseDate = DateTime.UtcNow
+                    });
+
+                }
+                _context.GiftShoppingCartModel.Remove(item);
+            }
 
             //for (int i = 0; i < quantity; i++)
             //{
             //    await _context.PurchasesModel.AddAsync(newPurchase);
             //}
-
             var res = await _context.SaveChangesAsync();
             return res > 0;
         }
