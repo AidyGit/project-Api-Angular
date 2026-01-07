@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using project.Customer.Interfaces;
 using project.Manage.Dtos;
 using project.Manage.Interfaces;
@@ -11,13 +12,16 @@ namespace project.Manage.Controller
     public class DonorsController : ControllerBase
     {
         private readonly IDonorsService _donorService;
+        private readonly ILogger<DonorsController> _logger;
         //c-tor
 
-        public DonorsController(IDonorsService donorService)
+        public DonorsController(IDonorsService donorService,ILogger<DonorsController> logger)
         {
             _donorService = donorService;
+            _logger = logger;
         }
-
+        //GetDonors
+        [Authorize(Roles = "Admin")]
         [HttpGet("Donors")]
         public async Task<ActionResult<DonorsDto>> GetDonors()
         {
@@ -25,6 +29,7 @@ namespace project.Manage.Controller
             return Ok(donors);
         }
         //AddDonor
+        [Authorize(Roles = "Admin")]
         [HttpPost("AddDonor")]
         public async Task<ActionResult<bool>> AddDonor([FromQuery] DonorsDto donorDto)
         {
@@ -37,6 +42,8 @@ namespace project.Manage.Controller
                 return BadRequest(new { message = ex.Message });
             }
         }
+        //DeleteDonor
+        [Authorize(Roles = "Admin")]
         [HttpDelete("DeleteDonor/{id}")]
         public async Task<ActionResult> DeleteDonor([FromQuery] int id)
         {
@@ -51,6 +58,7 @@ namespace project.Manage.Controller
             }
         }
         //ApdateDonor
+        [Authorize(Roles = "Admin")]
         [HttpPut("UpdateDonor/{id}")]
         public async Task<ActionResult<DonorsModel>> UpdateDonor([FromQuery] int id, DonorsUpdateDto donorToUp)
         {
@@ -65,6 +73,7 @@ namespace project.Manage.Controller
             public string NameGift { get; set; }
         }
         //filter donors by name gift or email
+        [Authorize(Roles = "Admin")]
         [HttpGet("FilterDonors")]
         public async Task<ActionResult<IEnumerable<DonorsDto>>> FilterDonors(DonorFilterParams DonorFilterParams)
         {

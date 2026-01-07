@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using project.Customer.Dtos;
 using project.Customer.Interfaces;
 using project.Models.Customer;
@@ -11,12 +12,14 @@ namespace project.Customer.Controllers
     public class GiftController : ControllerBase
     {
         private readonly IGiftService _giftService;
+        private readonly ILogger <GiftController> _logger;
 
-        public GiftController(IGiftService giftService)
+        public GiftController(IGiftService giftService,ILogger<GiftController> logger)
         {
+            _logger = logger;
             _giftService = giftService;
         }
-
+        
         //Get all gifts
         [HttpGet("Gifts")]
         public async Task<IEnumerable<GiftDto.GiftDetailDto>> GetAllGifts()

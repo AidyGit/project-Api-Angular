@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using static project.Customer.Dtos.UserDto;
 
 namespace project.Customer.Dtos
 {
@@ -39,4 +40,12 @@ namespace project.Customer.Dtos
 
         }
     }
+    public class LoginResponseDto
+    {
+        public string Token { get; set; } = string.Empty;
+        public string TokenType { get; set; } = "Bearer";
+        public int ExpiresIn { get; set; }
+        public RegisterDto User { get; set; } = null!;
+    }
+
 }

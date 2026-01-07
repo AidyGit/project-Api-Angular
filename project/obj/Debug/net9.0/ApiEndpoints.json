@@ -448,6 +448,16 @@
   },
   {
     "ContainingType": "project.Manage.Controller.PurchasesController",
+    "Method": "Download",
+    "RelativePath": "api/Purchases/download-revenue",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "project.Manage.Controller.PurchasesController",
     "Method": "GetPuchasesByDonation",
     "RelativePath": "api/Purchases/Puchases/{id}",
     "HttpMethod": "GET",
@@ -496,6 +506,16 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "project.Manage.Controller.RandomController",
+    "Method": "GetWinnerByDonation",
+    "RelativePath": "api/Random/WinnerByDonation",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "project.Customer.Controllers.UserController",

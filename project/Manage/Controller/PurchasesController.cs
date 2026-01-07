@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using project.Manage.Dtos;
 using project.Manage.Interfaces;
 
@@ -9,11 +10,14 @@ namespace project.Manage.Controller
     public class PurchasesController : ControllerBase
     {
         private readonly IPurchasesService _puchasesService;
-        public PurchasesController(IPurchasesService puchasesService)
+        private readonly ILogger<PurchasesController> _logger;
+        public PurchasesController(IPurchasesService puchasesService,ILogger<PurchasesController> logger)
         {
             _puchasesService = puchasesService;
+            _logger = logger;
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet("Puchases/{id}")]
         public async Task<ActionResult<GetDonationWithPurchase>> GetPuchasesByDonation([FromQuery] int id)
         {
@@ -27,6 +31,8 @@ namespace project.Manage.Controller
                 return BadRequest(new { message = ex.Message });
             }
         }
+
+        [Authorize(Roles = "Admin")]
         [HttpGet("Purchases")]
         public async Task<ActionResult<GetDonationWithPurchase>> GetPurchases()
         {
@@ -40,5 +46,31 @@ namespace project.Manage.Controller
                 return BadRequest(new { message = ex.Message });
             }
         }
+
+        [Authorize(Roles = "Admin")]
+        [HttpGet("download-revenue")]
+        public async Task<IActionResult> Download()
+        {
+            try
+            {
+                // קריאה לסרביס שמייצר את הקובץ
+                var fileBytes = await _puchasesService.GetRevenueExcelFileAsync();
+
+                if (fileBytes == null || fileBytes.Length == 0)
+                    return NotFound("אין נתונים להפקה");
+
+                // החזרת הקובץ להורדה
+                return File(
+                    fileBytes,
+                    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    "RevenueReport.xlsx"
+                );
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+
     }
 }

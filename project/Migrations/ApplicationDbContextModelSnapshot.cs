@@ -119,9 +119,6 @@ namespace project.Migrations
                     b.Property<int>("DonationId")
                         .HasColumnType("int");
 
-                    b.Property<int>("DonationsId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("PurchaseDate")
                         .HasColumnType("datetime2");
 
@@ -133,7 +130,7 @@ namespace project.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DonationsId");
+                    b.HasIndex("DonationId");
 
                     b.HasIndex("ShoppingCartId");
 
@@ -287,8 +284,8 @@ namespace project.Migrations
             modelBuilder.Entity("project.Manage.Models.PurchasesModel", b =>
                 {
                     b.HasOne("project.Manage.Models.DonationsModel", "Donations")
-                        .WithMany()
-                        .HasForeignKey("DonationsId")
+                        .WithMany("PurchasesModel")
+                        .HasForeignKey("DonationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -357,6 +354,11 @@ namespace project.Migrations
             modelBuilder.Entity("project.Manage.Models.CategoryModel", b =>
                 {
                     b.Navigation("Donations");
+                });
+
+            modelBuilder.Entity("project.Manage.Models.DonationsModel", b =>
+                {
+                    b.Navigation("PurchasesModel");
                 });
 
             modelBuilder.Entity("project.Manage.Models.DonorsModel", b =>

@@ -137,86 +137,77 @@ namespace project.Customer.Repositories
             return res > 0;
         }
 
-        public async Task<bool> UpdateStatusCart(int cartId, int quantity)
-        {
-            var cart = await _context.ShoppingCartModel
-                .Include(c => c.GiftShoppingCart)
+        //public async Task<bool> UpdateStatusCart(int cartId, int quantity)
+        //{
+        //    var cart = await _context.ShoppingCartModel
+        //        .Include(c => c.GiftShoppingCart)
 
-                        .ThenInclude(g => g.Donations)
+        //                .ThenInclude(g => g.Donations)
 
-                .FirstOrDefaultAsync(c => c.Id == cartId);
+        //        .FirstOrDefaultAsync(c => c.Id == cartId);
 
-            Console.WriteLine(cart != null ? "Cart found" : "Cart not found");
-            Console.WriteLine(cart.GiftShoppingCart.Count); // צריך להיות > 0
+        //    Console.WriteLine(cart != null ? "Cart found" : "Cart not found");
+        //    Console.WriteLine(cart.GiftShoppingCart.Count); // צריך להיות > 0
 
-            if (cart == null)
-            {
-                return false; // Return false if no matching cart is found
-            }
+        //    if (cart == null)
+        //    {
+        //        return false; // Return false if no matching cart is found
+        //    }
 
-            // בדיקה אם צריך לעדכן סטטוס
-            //bool statusChanged = false;
-            //if (cart.Status != CartStatus.Purchased)
-            //{
-            //    cart.Status = CartStatus.Purchased;
-            //    statusChanged = true;
-            //}
-
-            var cartItems = cart.GiftShoppingCart.ToList();
-            //bool purchasesAdded = false;
-
-
-            cart.Status = CartStatus.Purchased; // Update status to completed using the enum value
+        //    // בדיקה אם צריך לעדכן סטטוס
+        //    //bool statusChanged = false;
+        //    //if (cart.Status != CartStatus.Purchased)
+        //    //{
+        //    //    cart.Status = CartStatus.Purchased;
+        //    //    statusChanged = true;
+        //    //}
+        //    _context.Entry(cart).Property(c => c.Status).IsModified = true;
+        //    var cartItems = cart.GiftShoppingCart.ToList();
+        //    //bool purchasesAdded = false;
 
 
-            foreach (var item in cartItems)
-            {
-                if (item.Donations == null)
-                    continue;
+        //    cart.Status = CartStatus.Purchased; // Update status to completed using the enum value
+
+
+        //    foreach (var item in cartItems)
+        //    {
+        //        if (item.Donations == null)
+        //            continue;
 
 
 
-                if (item.Quantity > 1)
-                {
-                    for (int i = 0; i < item.Quantity; i++)
-                    {
-                        _context.Add(new PurchasesModel
-                        {
-                            UserId = cart.UserId,
-                            DonationId = item.DonationId,
-                            PurchaseDate = DateTime.UtcNow
-                        });
-                    }
-                }
-                else
-                {
-                    _context.Add(new PurchasesModel
-                    {
-                        UserId = cart.UserId,
-                        DonationId = item.DonationId,
-                        PurchaseDate = DateTime.UtcNow
-                    });
-                    //purchasesAdded = true;
-                }
-                _context.GiftShoppingCartModel.Remove(item);
-            }
-            //foreach (var item in cart.GiftShoppingCart.ToList())
-            //{
-            //    for (int i = 0; i < item.Quantity; i++)
-            //    {
-            //        _context.Add(new PurchasesModel
-            //        {
-            //            UserId = cart.UserId,
-            //            DonationId = item.DonationId,
-            //            PurchaseDate = DateTime.UtcNow
-            //        });
-            //    }
+        //        for (int i = 0; i < item.Quantity; i++)
+        //        {
+        //            // הוספה ישירה ל-DbSet של הרכישות
+        //            _context.PurchasesModel.Add(new PurchasesModel
+        //            {
+        //                UserId = cart.UserId,
+        //                DonationId = item.DonationId,
+        //                PurchaseDate = DateTime.UtcNow
+        //            });
+        //        }
+        //        //purchasesAdded = true;
 
-            //_context.GiftShoppingCartModel.Remove(item);
+        //        _context.GiftShoppingCartModel.Remove(item);
 
-            var res = await _context.SaveChangesAsync();
-            return res > 0;
-        }
+        //    }
+        //    //foreach (var item in cart.GiftShoppingCart.ToList())
+        //    //{
+        //    //    for (int i = 0; i < item.Quantity; i++)
+        //    //    {
+        //    //        _context.Add(new PurchasesModel
+        //    //        {
+        //    //            UserId = cart.UserId,
+        //    //            DonationId = item.DonationId,
+        //    //            PurchaseDate = DateTime.UtcNow
+        //    //        });
+        //    //    }
+
+        //    //_context.GiftShoppingCartModel.Remove(item);
+
+        //    var res = await _context.SaveChangesAsync();
+        //    return res > 0;
+        //}
 
         //public async Task<bool> UpdateStatusCart(int cartId, int quantity)
         //{
@@ -274,6 +265,54 @@ namespace project.Customer.Repositories
         //    await _context.SaveChangesAsync();
         //    return statusChanged || purchasesAdded;
         //}
+
+        public async Task<bool> UpdateStatusCart(int cartId, int quantity)
+        {
+            // טעינה ספציפית של העגלה עם הפריטים שלה
+            var cart = await _context.ShoppingCartModel
+                .Include(c => c.GiftShoppingCart)
+                .ThenInclude(g => g.Donations)
+                .FirstOrDefaultAsync(c => c.Id == cartId);
+
+            if (cart == null) return false;
+
+            // עדכון הסטטוס לעגלה הזו בלבד
+            cart.Status = CartStatus.Purchased;
+
+            var cartItems = cart.GiftShoppingCart.ToList();
+
+            foreach (var item in cartItems)
+            {
+                if (item.DonationId <= 0) continue;
+                //if (item.Donations == null) continue;
+
+                // הוספת רשומות רכישה כמספר הכמות (Tickets)
+                for (int i = 0; i < item.Quantity; i++)
+                {
+                    _context.PurchasesModel.Add(new PurchasesModel
+                    {
+                        UserId = cart.UserId,
+                        DonationId = item.DonationId,
+                        PurchaseDate = DateTime.UtcNow,
+                        ShoppingCartId = item.ShoppingCartId
+                    });
+                }
+
+                // מחיקת הפריט מהסל
+                _context.GiftShoppingCartModel.Remove(item);
+            }
+
+            // ביצוע השמירה - מחזיר את מספר השורות שהשתנו (עדכון 1 + הוספות + מחיקות)
+            try
+            {
+                var res = await _context.SaveChangesAsync();
+                return res > 0;
+            }
+            catch (DbUpdateException ex)
+            {
+                throw;
+            }
+        }
     }
 
 }

@@ -8,5 +8,6 @@ namespace project.Manage.Interfaces
         Task<IEnumerable<PurchasesModel>> GetPuchasesByDonation(int donationId);
         Task<IEnumerable<PurchasesModel>> GetPuchases();
 
+
     }
 }

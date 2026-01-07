@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using project.Customer.Interfaces;
 using project.Customer.Repositories;
 using project.Customer.Repository;
@@ -7,25 +9,84 @@ using project.Data;
 using project.Manage.Interfaces;
 using project.Manage.Repository;
 using project.Manage.Services;
+using Serilog;
+using System.Text;
 
-var builder = WebApplication.CreateBuilder(args);
+
+
+// Configure Serilog
+Log.Logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(new ConfigurationBuilder()
+        .AddJsonFile("appsettings.json")
+        .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production"}.json", optional: true)
+        .Build())
+    .Enrich.FromLogContext()
+    .WriteTo.Console()
+    .WriteTo.File("Logs/log-.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
+try {
+    Log.Information("Starting Store API application");
+
+    var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+    builder.Services.AddAuthorization(options =>
+    {
+        options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
+    });
+    builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer("Server=DESKTOP-M9GE62O;DataBase=216259465_ChineseSale;Integrated Security=SSPI;Persist Security Info=False;TrustServerCertificate=True;"));
+    // Configure JWT Authentication
+    var jwtSettings = builder.Configuration.GetSection("JwtSettings");
+    var secretKey = jwtSettings["SecretKey"] ?? throw new InvalidOperationException("JWT SecretKey is not configured");
+
+    builder.Services.AddAuthentication(options =>
+    {
+        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    })
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = jwtSettings["Issuer"],
+            ValidAudience = jwtSettings["Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey)),
+            ClockSkew = TimeSpan.Zero
+        };
+
+        options.Events = new JwtBearerEvents
+        {
+            OnAuthenticationFailed = context =>
+            {
+                Log.Warning("JWT Authentication failed: {Error}", context.Exception.Message);
+                return Task.CompletedTask;
+            },
+            OnTokenValidated = context =>
+            {
+                var userId = context.Principal?.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+                Log.Debug("JWT token validated for user {UserId}", userId);
+                return Task.CompletedTask;
+            }
+        };
+    });
 
 
-//builder.Services.AddDbContext<MarketDbContext>(options =>
-//        options.UseSqlServer("ConnectionStrings"));
+    //builder.Services.AddDbContext<MarketDbContext>(options =>
+    //        options.UseSqlServer("ConnectionStrings"));
 
 
-// Register services
-builder.Services.AddScoped<IUserService, UserService>();
+    // Register services
+    builder.Services.AddScoped<IUserService, UserService>();
 
 // Gift service
 builder.Services.AddScoped<IGiftService, GiftService>();
@@ -54,8 +115,16 @@ builder.Services.AddScoped<IPurchasesRepository, PurchasesRepository>();
 //Donation service
 builder.Services.AddScoped<IPurchasesService, PurchasesService>();
 
+// Random Repo
+builder.Services.AddScoped<IRandomRepository, RandomRepository>();
 
-builder.Services.AddEndpointsApiExplorer();
+//Random service
+builder.Services.AddScoped<IRandomService, RandomService>();
+
+//Token Service
+builder.Services.AddScoped<TokenService>();
+
+    builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
@@ -72,9 +141,20 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-app.UseAuthorization();
+    app.UseAuthentication();
+    app.UseAuthorization();
 
 app.MapControllers();
 
+Log.Information("Store API is now running");
+
 app.Run();
+}
+catch (Exception ex)
+{
+    Log.Fatal(ex, "Application terminated unexpectedly");
+}
+finally
+{
+    Log.CloseAndFlush();
+}

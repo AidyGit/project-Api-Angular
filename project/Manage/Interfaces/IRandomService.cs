@@ -6,6 +6,6 @@ namespace project.Manage.Interfaces
 {
     public interface IRandomService
     {
-        Task<RandomDto> GetWinnerToDonation();
-    }
+        Task<List<RandomDto>> GetWinnerToDonation();
+            }
 }

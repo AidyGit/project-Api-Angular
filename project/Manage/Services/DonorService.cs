@@ -39,7 +39,7 @@ namespace project.Manage.Services
             }
             return await _donorsRepository.DeleteDonor(donor);
         }
-        //update donor
+        // Update donor method with fixed IsNullOrEmpty usage
         public async Task<DonorsUpdateDto> UpdateDonor(int id, DonorsUpdateDto donorToUp)
         {
             var donor = await _donorsRepository.GetDonorsById(id);
@@ -47,24 +47,29 @@ namespace project.Manage.Services
             {
                 return null;
             }
-            if (!donorToUp.Name.IsNullOrEmpty())
+
+            if (!string.IsNullOrEmpty(donorToUp.Name))
                 donor.Name = donorToUp.Name;
             else
                 donor.Name = donor.Name;
-            if (!donorToUp.Email.IsNullOrEmpty())
+
+            if (!string.IsNullOrEmpty(donorToUp.Email))
                 donor.Email = donorToUp.Email;
             else
                 donor.Email = donor.Email;
-            if (!donorToUp.Phone.IsNullOrEmpty())
+
+            if (!string.IsNullOrEmpty(donorToUp.Phone))
                 donor.Phone = donorToUp.Phone;
             else
                 donor.Phone = donor.Phone;
+
             var updatedDonor = new DonorsUpdateDto
             {
                 Name = donor.Name,
                 Email = donor.Email,
                 Phone = donor.Phone
             };
+
             await _donorsRepository.UpdateDonor(donor);
             return updatedDonor;
         }

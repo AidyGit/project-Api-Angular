@@ -1,4 +1,4 @@
-using project.Customer.Dtos;
+﻿using project.Customer.Dtos;
 using project.Manage.Dtos;
 using project.Manage.Interfaces;
 using project.Manage.Models;
@@ -7,17 +7,18 @@ using project.Models.Customer;
 
 namespace project.Manage.Services
 {
-    public class RandomService:IRandomService
+    public class RandomService : IRandomService
     {
         private readonly IRandomRepository _randomRepository;
         public RandomService(IRandomRepository randomRepository)
         {
             _randomRepository = randomRepository;
         }
-        public async Task<RandomDto> GetWinnerToDonation()
+
+        public async Task<List<RandomDto>> GetWinnerToDonation()
         {
             return await _randomRepository.GetWinnerToDonation();
         }
-            
+
     }
 }

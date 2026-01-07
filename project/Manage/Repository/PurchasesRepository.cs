@@ -21,13 +21,14 @@ namespace project.Manage.Repository
             return Purchases;
         }
 
+
         //get all purchases
         public async Task<IEnumerable<PurchasesModel>> GetPuchases()
         {
-            //var Purchases = await _context.PurchasesModel.Include(d => d.Donations).ToListAsync();
-
-            var Purchases = await _context.PurchasesModel.ToListAsync();
-            return Purchases;
+            // חשוב להשתמש ב-Include כדי שנוכל לגשת לשם התרומה/מתנה בדוח
+            return await _context.PurchasesModel
+                .Include(p => p.Donations) // טעינת הישות המקושרת
+                .ToListAsync();
         }
     }
 }

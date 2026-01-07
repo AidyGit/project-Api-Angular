@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using project.Customer.Dtos;
 using project.Customer.Interfaces;
 
@@ -9,11 +10,12 @@ namespace project.Customer.Controllers
     public class UserController:ControllerBase
     {
         private readonly IUserService _userService;
+        private readonly ILogger <UserController> _logger;
 
-        public UserController(IUserService userService) 
+        public UserController(IUserService userService,ILogger<UserController> logger) 
         {
+            _logger = logger;
             _userService = userService;
-
         }
 
         //register
@@ -23,8 +25,7 @@ namespace project.Customer.Controllers
             try
             {
                 var user = await _userService.CreateUser(register);
-                return CreatedAtAction(nameof(Register), new { id = user.Id }, user);
-
+                return CreatedAtAction(nameof(Register), new { userName = user.UserName }, user);
             }
             catch (ArgumentException ex)
             {
@@ -39,7 +40,7 @@ namespace project.Customer.Controllers
             try
             {
                 var user = await _userService.LoginUser(login);
-                return CreatedAtAction(nameof(Login), new { userName = user.UserName }, user);
+                return CreatedAtAction(nameof(Login), new { userName = user.User.UserName }, user);
 
             }
             catch (ArgumentException ex)
@@ -47,6 +48,9 @@ namespace project.Customer.Controllers
                 return BadRequest(new { message = ex.Message });
             }
         }
+
+        //get all users
+        [Authorize(Roles = "Admin")]
         [HttpGet("AllUsers")]
         public async Task<ActionResult<IEnumerable<UserDto.GetUserDto>>> GetAllUsers()
         {

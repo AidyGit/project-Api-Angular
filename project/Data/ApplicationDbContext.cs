@@ -49,6 +49,11 @@ namespace project.Data
                 e.Property(e => e.Name).IsRequired().HasMaxLength(100);
                 //לבדוק אם נכון לעשות INT
                 e.Property(e => e.PriceTiket).IsRequired();
+                e.Property(e => e.PriceTiket).IsRequired();
+                modelBuilder.Entity<PurchasesModel>()
+                .HasOne(p => p.Donations)
+                .WithMany(d => d.PurchasesModel)
+                .HasForeignKey(p => p.DonationId);
             });
 
             modelBuilder.Entity<DonorsModel>(e =>

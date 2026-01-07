@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using project.Customer.Controllers;
 using project.Manage.Dtos;
 using project.Manage.Interfaces;
 using project.Manage.Models;
@@ -13,11 +15,14 @@ namespace project.Manage.Controller
     public class DonationController : ControllerBase
     {
         private readonly IDonationService _donationService;
+        private readonly ILogger<DonationController> _logger;
+
         //c-tor
 
-        public DonationController(IDonationService donationService)
+        public DonationController(IDonationService donationService,ILogger<DonationController> logger)
         {
             _donationService = donationService;
+            _logger = logger;
         }
 
 
@@ -34,6 +39,8 @@ namespace project.Manage.Controller
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
+
+        [Authorize(Roles = "Admin")]
         //AddDonation
         [HttpPost("AddDonation")]
         public async Task<ActionResult<bool>> AddDonation([FromQuery] CreateDonationDto donationDto)
@@ -47,6 +54,8 @@ namespace project.Manage.Controller
                 return BadRequest(new { message = ex.Message });
             }
         }
+        //DeleteDonation
+        [Authorize(Roles = "Admin")]
         [HttpDelete("DeleteDonation/{id}")]
         public async Task<ActionResult> DeleteDonation([FromQuery] int id)
         {
@@ -69,6 +78,7 @@ namespace project.Manage.Controller
 
         }
         //UpdateDonation
+        [Authorize(Roles = "Admin")]
         [HttpPut("UpdateDonation/{id}")]
         public async Task<ActionResult<DonorsModel>> UpdateDonation([FromQuery] int id, CreateDonationDto donorToUp)
         {

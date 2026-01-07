@@ -6,5 +6,6 @@ namespace project.Manage.Interfaces
     {
         Task<IEnumerable<GetDonationWithPurchase>> GetPuchasesByDonation(int donationId);
         Task<IEnumerable<GetDonationWithPurchase>> GetPuchases();
+        Task<byte[]> GetRevenueExcelFileAsync();
     }
 }

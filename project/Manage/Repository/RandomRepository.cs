@@ -23,11 +23,12 @@ namespace project.Manage.Repository
         public async Task<List<RandomDto>> GetWinnerToDonation()
         {
             var winners = new List<RandomDto>();
+            var random = new Random();
 
-            var donations = await _context.Donations
-            .Include(d => d.PurchasesModel)
-            .thenInclude(p => p.User)
-            .ToListAsync();
+            var donations = await _context.DonationsModel
+                .Include(d => d.PurchasesModel) // עכשיו זה יזהה את המאפיין!
+                .ThenInclude(p => p.User)
+                .ToListAsync();
 
             foreach (var donation in donations)
             {
@@ -35,7 +36,6 @@ namespace project.Manage.Repository
                 if (purchases.Count == 0)
                     continue;
 
-                var random = new Random();
                 int index = random.Next(purchases.Count);
                 var winnerPurchase = purchases[index];
 
@@ -51,12 +51,18 @@ namespace project.Manage.Repository
                     Phone = user.Phone,
                     DonationName = donation.Name
                 });
-                SendEmailAsync(user.Email, "מזל טוב! זכית בהגרלה", $"שלום {user.Name},<br/>מזל טוב! זכית בהגרלה עבור התרומה: {donation.Title}.<br/>אנא צור קשר לקבלת הפרסים שלך.");
-            }
-            DownloadWinnersExcel(winners);
+try 
+    {
+        await SendEmailAsync(user.Email, "מזל טוב! זכית בהגרלה", 
+            $"שלום {user.Name},<br/>זכית עבור התרומה: {donation.Name}.");
+    }
+    catch (Exception ex)
+    {
+        // כדאי להוסיף לוג למקרה ששליחת המייל נכשלה כדי שהתוכנית לא תקרוס
+        Console.WriteLine($"שגיאה בשליחת מייל ל-{user.Email}: {ex.Message}");
+    }            }
             return winners;
         }
-
 
         public async Task SendEmailAsync(string toEmail, string subject, string body)
         {
@@ -73,7 +79,7 @@ namespace project.Manage.Repository
                 await client.ConnectAsync("smtp.gmail.com", 587, MailKit.Security.SecureSocketOptions.StartTls);
 
                 // הזדהות (מומלץ להשתמש בסיסמה ייעודית לאפליקציות)
-                await client.AuthenticateAsync("your-email@example.com", "your-password");
+                await client.AuthenticateAsync("y0548558425@gmail.com", "216259465");
 
                 await client.SendAsync(message);
                 await client.DisconnectAsync(true);

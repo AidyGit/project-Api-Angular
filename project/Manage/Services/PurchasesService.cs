@@ -1,5 +1,6 @@
 ﻿using project.Customer.Dtos;
 using project.Manage.Dtos;
+using project.Manage.Function;
 using project.Manage.Interfaces;
 using project.Manage.Models;
 using project.Manage.Repository;
@@ -47,5 +48,22 @@ namespace project.Manage.Services
             };
         }
 
+        public async Task<byte[]> GetRevenueExcelFileAsync()
+        {
+            // 1. שליפת הנתונים מהריפוזיטורי
+            var allPurchases = await _purchasesRepository.GetPuchases();
+
+            // 2. יצירת הדוח והתאמה ל-DTO שלך
+            var reportData = allPurchases
+                .GroupBy(p => p.DonationId)
+                .Select(group => new TotalRevenueDto
+                {
+                    GiftName = group.First().Donations?.Name ?? "ללא שם",
+                    TotalRevenue = group.Sum(p => p.Donations.PriceTiket) // כאן תוודאי ש-Price הוא השם במודל הרכישות
+                }).ToList();
+
+            // 3. שליחה להלפר שמתבסס על ה-DTO המעודכן
+            return TotalRevenue.CreateRevenueExcel(reportData);
+        }
     }
 }

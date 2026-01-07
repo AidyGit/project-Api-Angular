@@ -13,7 +13,7 @@
         public DonorsModel Donors { get; set; }
         public string? ImageUrl { get; set; }
 
-        public ICollection<PurchasesModel> PurchasesModel = new List<PurchasesModel>();
+        public ICollection<PurchasesModel> PurchasesModel { get; set; } = new List<PurchasesModel>();
 
 
     }

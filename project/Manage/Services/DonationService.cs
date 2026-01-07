@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace project.Manage.Services
 {
-    public class DonationService:IDonationService
+    public class DonationService : IDonationService
     {
         private readonly IDonationRepository _donationRepository;
         public DonationService(IDonationRepository donationRepository)
@@ -32,32 +32,32 @@ namespace project.Manage.Services
 
         public async Task<CreateDonationDto> UpdateDonation(int id, CreateDonationDto donationDto)
         {
-            var donation =await _donationRepository.GetDonationById(id);
+            var donation = await _donationRepository.GetDonationById(id);
             if (donation == null)
             {
                 return null;
             }
-            if (!donationDto.Name.IsNullOrEmpty())
+            if (!string.IsNullOrEmpty(donationDto.Name))
                 donation.Name = donationDto.Name;
             else
                 donation.Name = donation.Name;
-            if (!donationDto.ImageUrl.IsNullOrEmpty())
+            if (!string.IsNullOrEmpty(donationDto.ImageUrl))
                 donation.ImageUrl = donationDto.ImageUrl;
             else
                 donation.ImageUrl = donation.ImageUrl;
-            if (!donationDto.Description.IsNullOrEmpty())
+            if (!string.IsNullOrEmpty(donationDto.Description))
                 donation.Description = donationDto.Description;
             else
                 donation.Description = donation.Description;
-            if(donationDto.PriceTiket != 0)
+            if (donationDto.PriceTiket != 0)
                 donation.PriceTiket = donationDto.PriceTiket;
             else
                 donation.PriceTiket = donation.PriceTiket;
-            if(donationDto.CategoryId != 0)
+            if (donationDto.CategoryId != 0)
                 donation.CategoryId = donationDto.CategoryId;
             else
                 donation.CategoryId = donation.CategoryId;
-            if(donationDto.DonorsId != 0)
+            if (donationDto.DonorsId != 0)
                 donation.DonorsId = donationDto.DonorsId;
             else
                 donation.DonorsId = donation.DonorsId;

@@ -5,9 +5,9 @@ using System.IO;
 
 namespace project.Manage.Function
 {
-    public class ExcelDownloadService // Wrap the method in a class if not already part of one
+    public static class ExcelDownloadService // Wrap the method in a class if not already part of one
     {
-        public async Task<FileContentResult> DownloadWinnersExcel(List<RandomDto> winners)
+        public static FileContentResult DownloadWinnersExcel(List<RandomDto> winners)
         {
             using (var workbook = new XLWorkbook())
             {

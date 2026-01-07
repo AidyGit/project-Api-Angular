@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using project.Manage.Dtos;
 using project.Manage.Interfaces;
+using project.Manage.Function;
 
 namespace project.Manage.Controller
 {
@@ -9,37 +10,33 @@ namespace project.Manage.Controller
     public class RandomController : ControllerBase
     {
         private readonly IRandomService _randomService;
-        public RandomController(IRandomService randomService)
+        private readonly ILogger _logger;
+
+        public RandomController(IRandomService randomService,ILogger<RandomController> logger)
         {
             _randomService = randomService;
+            _logger = logger;
+
         }
 
-
         [HttpGet("WinnerByDonation")]
-        public async Task<ActionResult<RandomDto>> GetWinnerByDonation()
+        public async Task<ActionResult> GetWinnerByDonation()
         {
             try
             {
-                return Ok(await _randomService.GetWinnerToDonation());
+                // Ensure the result from GetWinnerToDonation is a List<RandomDto>
+                var winners = await _randomService.GetWinnerToDonation();
 
+                // Pass the correct type (List<RandomDto>) to DownloadWinnersExcel
+                var excelResult = ExcelDownloadService.DownloadWinnersExcel(winners);
+
+                // Use the FileContents property of FileContentResult to get the byte array
+                return File(excelResult.FileContents, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Winners.xlsx");
             }
             catch (Exception ex)
             {
                 return BadRequest(new { message = ex.Message });
             }
         }
-        // [HttpGet("DownloadWinnersExcel")]
-        // public async Task<IActionResult> DownloadWinnersExcel()
-        // {
-        //     try
-        //     {
-        //         var winners = await _randomService.GetWinners();
-        //         return await _randomService.DownloadWinnersExcel(winners);
-        //     }
-        //     catch (Exception ex)
-        //     {
-        //         return BadRequest(new { message = ex.Message });
-        //     }
-        // }
     }
 }

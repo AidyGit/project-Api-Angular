@@ -1,4 +1,5 @@
 ﻿using project.Models.Customer;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace project.Manage.Models
 {
