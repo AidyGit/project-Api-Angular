@@ -133,33 +133,57 @@ namespace project.Customer.Repositories
             }
 
             giftToAdd.Quantity += 1;
-
             var res = await _context.SaveChangesAsync();
             return res > 0;
-
         }
 
-        public async Task<bool> UpdateStatusCart(int cartId,int quantity)
+        public async Task<bool> UpdateStatusCart(int cartId, int quantity)
         {
-            var cart = await _context.ShoppingCartModel.FindAsync(cartId);
+            var cart = await _context.ShoppingCartModel
+                .Include(c => c.GiftShoppingCart)
+
+                        .ThenInclude(g => g.Donations)
+
+                .FirstOrDefaultAsync(c => c.Id == cartId);
+
+            Console.WriteLine(cart != null ? "Cart found" : "Cart not found");
+            Console.WriteLine(cart.GiftShoppingCart.Count); // צריך להיות > 0
+
             if (cart == null)
             {
                 return false; // Return false if no matching cart is found
             }
 
+            // בדיקה אם צריך לעדכן סטטוס
+            //bool statusChanged = false;
+            //if (cart.Status != CartStatus.Purchased)
+            //{
+            //    cart.Status = CartStatus.Purchased;
+            //    statusChanged = true;
+            //}
+
+            var cartItems = cart.GiftShoppingCart.ToList();
+            //bool purchasesAdded = false;
+
+
             cart.Status = CartStatus.Purchased; // Update status to completed using the enum value
-            
-            foreach (var item in cart.GiftShoppingCart)
+
+
+            foreach (var item in cartItems)
             {
-                if(item.Quantity > 1)
+                if (item.Donations == null)
+                    continue;
+
+
+
+                if (item.Quantity > 1)
                 {
-                    for(int i=0;i< item.Quantity; i++)
+                    for (int i = 0; i < item.Quantity; i++)
                     {
                         _context.Add(new PurchasesModel
                         {
                             UserId = cart.UserId,
                             DonationId = item.DonationId,
-                            //ShoppingCartId = cartId,
                             PurchaseDate = DateTime.UtcNow
                         });
                     }
@@ -170,20 +194,86 @@ namespace project.Customer.Repositories
                     {
                         UserId = cart.UserId,
                         DonationId = item.DonationId,
-                        //ShoppingCartId = cartId,
                         PurchaseDate = DateTime.UtcNow
                     });
-
+                    //purchasesAdded = true;
                 }
                 _context.GiftShoppingCartModel.Remove(item);
             }
-
-            //for (int i = 0; i < quantity; i++)
+            //foreach (var item in cart.GiftShoppingCart.ToList())
             //{
-            //    await _context.PurchasesModel.AddAsync(newPurchase);
-            //}
+            //    for (int i = 0; i < item.Quantity; i++)
+            //    {
+            //        _context.Add(new PurchasesModel
+            //        {
+            //            UserId = cart.UserId,
+            //            DonationId = item.DonationId,
+            //            PurchaseDate = DateTime.UtcNow
+            //        });
+            //    }
+
+            //_context.GiftShoppingCartModel.Remove(item);
+
             var res = await _context.SaveChangesAsync();
             return res > 0;
         }
+
+        //public async Task<bool> UpdateStatusCart(int cartId, int quantity)
+        //{
+        //    // 1. טען את הסל
+        //    var cart = await _context.ShoppingCartModel
+        //        .FirstOrDefaultAsync(c => c.Id == cartId);
+
+        //    if (cart == null) return false;
+
+        //    bool statusChanged = false;
+        //bool purchasesAdded = false;
+
+        //// 2. עדכן סטטוס
+        //if (cart.Status != CartStatus.Purchased)
+        //{
+        //    cart.Status = CartStatus.Purchased;
+        //    statusChanged = true;
+        //}
+
+        //// 3. טעינת פריטים - ודא שה-Include עובד
+        //var cartItems = await _context.GiftShoppingCartModel
+        //    .Where(g => g.ShoppingCartId == cartId)
+        //    .Include(g => g.Donations)
+        //    .ToListAsync();
+
+        //// בדיקה: האם בכלל נמצאו פריטים?
+        //if (!cartItems.Any())
+        //{
+        //    // אם הגעת לכאן, סימן שאין פריטים בסל עם ה-ID הזה
+        //        await _context.SaveChangesAsync();
+        //        return statusChanged;
+        //    }
+
+        //    foreach (var item in cartItems)
+        //    {
+        //        // בדיקה: האם ה-Donation חסר?
+        //        if (item.Donations == null) continue;
+
+        //        // שימוש ב-item.Quantity או בפרמטר quantity מהפונקציה? 
+        //        // כרגע זה משתמש במה שיש בסל:
+        //        for (int i = 0; i < item.Quantity; i++)
+        //        {
+        //            _context.PurchasesModel.Add(new PurchasesModel
+        //            {
+        //                UserId = cart.UserId,
+        //                DonationId = item.Donation,
+        //                PurchaseDate = DateTime.UtcNow
+        //            });
+        //            purchasesAdded = true;
+        //        }
+
+        //        _context.GiftShoppingCartModel.Remove(item);
+        //    }
+
+        //    await _context.SaveChangesAsync();
+        //    return statusChanged || purchasesAdded;
+        //}
     }
+
 }

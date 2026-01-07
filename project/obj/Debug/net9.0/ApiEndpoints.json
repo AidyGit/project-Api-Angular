@@ -478,6 +478,26 @@
     ]
   },
   {
+    "ContainingType": "project.Manage.Controller.PurchasesController",
+    "Method": "GetPurchases",
+    "RelativePath": "api/Purchases/Purchases",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "project.Manage.Dtos.GetDonationWithPurchase",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "project.Customer.Controllers.UserController",
     "Method": "GetAllUsers",
     "RelativePath": "api/User/AllUsers",
