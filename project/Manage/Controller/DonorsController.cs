@@ -70,12 +70,13 @@ namespace project.Manage.Controller
         {
             public string? Name { get; set; }
             public string? Email { get; set; }
-            public string NameGift { get; set; }
+            public string? NameGift { get; set; }
         }
         //filter donors by name gift or email
+
         [Authorize(Roles = "Admin")]
         [HttpGet("FilterDonors")]
-        public async Task<ActionResult<IEnumerable<DonorsDto>>> FilterDonors(DonorFilterParams DonorFilterParams)
+        public async Task<ActionResult<IEnumerable<DonorsDto>>> FilterDonors([FromQuery] DonorFilterParams DonorFilterParams)
         {
             var donors = await _donorService.FilterDonors(DonorFilterParams);
             return Ok(donors);

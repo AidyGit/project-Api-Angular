@@ -28,6 +28,7 @@ namespace project.Manage.Repository
                 PriceTiket = d.PriceTiket,
                 categoryName = d.Category.Name,
                 DonorsId = d.DonorsId,
+                ImageUrl = d.ImageUrl
 
             }).ToListAsync();
         }

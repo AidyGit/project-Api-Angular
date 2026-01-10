@@ -32,6 +32,7 @@ namespace project.Manage.Repository
                         DescriptionDonation = don.Description,
                         NameDonation = don.Name,
                         PriceTiketDonation = don.PriceTiket
+                        
                     }).ToList()
                 }).ToListAsync();
         }
@@ -97,7 +98,7 @@ namespace project.Manage.Repository
 
             return await query.Select(d => new DonorsDto
             {
-                Name = donorFilterParams.Name,
+                Name = d.Name,
                 Email = d.Email,
                 Phone = d.Phone,
                 Donations = d.Donations.Select(don => new DonationDto

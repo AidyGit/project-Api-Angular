@@ -8,7 +8,6 @@ namespace project.Customer.Dtos
     {
         public class RegisterDto()
         {
-            public int Id { get; set; }
             [MaxLength (50),Required]
             public string? Name { get; set; }
             [EmailAddress, Required]
@@ -19,7 +18,6 @@ namespace project.Customer.Dtos
             public string? Phone { get; set; }
             [MaxLength(50), Required]
             public string? UserName { get; set; }
-            public DateTime CreatedAt { get; set; } = DateTime.Now;
 
         }
         public class LoginDto() 

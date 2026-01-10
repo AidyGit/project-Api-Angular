@@ -57,7 +57,7 @@ namespace project.Customer.Services
             }
 
             // 3. רק אם הכל תקין - מייצרים טוקן
-            var token = _tokenService.GenerateToken(user.Id, user.Email, user.Name, user.Role, user.UserName);
+            var token = _tokenService.GenerateToken(user.Id, user.Email, user.Name, user.UserName,user.Role);
            
             var expiryMinutes = _configuration.GetValue<int>("JwtSettings:ExpiryMinutes", 60);
 
@@ -80,13 +80,11 @@ namespace project.Customer.Services
         {
             return new UserDto.RegisterDto
             {
-                Id = user.Id,
                 Name = user.Name,
                 Password = user.Password,
                 UserName = user.UserName,
                 Email = user.Email,
                 Phone = user.Phone,
-                CreatedAt = user.CreatedAt
             };
         }
 

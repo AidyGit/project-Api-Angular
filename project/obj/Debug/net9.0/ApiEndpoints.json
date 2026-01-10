@@ -218,9 +218,19 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "DonorFilterParams",
-        "Type": "project.Manage.Controller.DonorsController\u002BDonorFilterParams",
-        "IsRequired": true
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "NameGift",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
