@@ -1,0 +1,69 @@
+<div class="card">
+    <p-dataview #dv [value]="donations()" [layout]="layout">
+        
+                <ng-template #header>
+                    <div class="flex justify-end">
+                        <p-selectbutton [(ngModel)]="layout" [options]="options" [allowEmpty]="false">
+                            <ng-template #item let-item>
+                                <i class="pi " [ngClass]="{ 'pi-bars': item === 'list', 'pi-table': item === 'grid' }"></i>
+                            </ng-template>
+                        </p-selectbutton>
+                    </div>
+                </ng-template>
+
+
+        <ng-template #list let-items>
+            <div class="grid grid-nogutter">
+                <div *ngFor="let donation of items; let first = first" class="col-12">
+                    <div class="flex flex-column md:flex-row align-items-center p-4 gap-4" [ngClass]="{ 'border-top-1 surface-border': !first }">
+                        <div class="w-full md:w-15rem flex-shrink-0">
+                            <img class="border-round w-full shadow-2" [src]="donation.imageUrl" [alt]="donation.name" style="height: 150px; object-fit: cover;" />
+                        </div>
+                        
+                        <div class="flex flex-column md:flex-row justify-content-between align-items-center flex-1 gap-4">
+                            <div class="flex flex-column align-items-center md:align-items-start gap-2">
+                                <span class="font-medium text-secondary text-sm">קטגוריה: {{ donation.categoryName }}</span>
+                                <div class="text-2xl font-bold text-900">{{ donation.name }}</div>
+                            </div>
+                            
+                            <div class="flex flex-column align-items-center md:align-items-end gap-3">
+                                <span class="text-2xl font-semibold">₪ {{ donation.priceTiket }}</span>
+                                <div class="flex gap-2">
+                                    <button pButton icon="pi pi-shopping-cart" label="Buy Now" class="white-space-nowrap"></button>
+                                    <button pButton icon="pi pi-heart" [outlined]="true"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+
+        <ng-template #grid let-items>
+            <div class="grid grid-nogutter">
+                <div *ngFor="let donation of items" class="col-12 sm:col-6 md:col-4 p-2">
+                    <div class="p-4 border-1 surface-border surface-card border-round shadow-2 flex flex-column h-full">
+                        <div class="surface-50 flex justify-content-center border-round p-3">
+                            <img class="border-round w-full shadow-1" [src]="donation.imageUrl" [alt]="donation.name"
+                                 style="max-width: 200px; height: 150px; object-fit: cover;" />
+                        </div>
+
+                        <div class="pt-4 flex-grow-1">
+                            <span class="font-medium text-secondary text-sm">קטגוריה: {{ donation.categoryName }}</span>
+                            <div class="text-lg font-bold mt-1">{{ donation.name }}</div>
+                        </div>
+
+                        <div class="flex flex-column gap-3 mt-4">
+                            <span class="text-2xl font-semibold">₪ {{ donation.priceTiket }}</span>
+                            <div class="flex gap-2">
+                                <button pButton icon="pi pi-shopping-cart" label="Buy Now" class="flex-grow-1"></button>
+                                <button pButton icon="pi pi-heart" [outlined]="true"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+
+    </p-dataview>
+</div>

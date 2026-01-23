@@ -1,0 +1,4 @@
+:host ::ng-deep .p-dataview-content {
+    min-height: 200px !important;
+    background: red !important; /* אם אתה לא רואה אדום, ה-DataView בכלל לא מתרנדר */
+}
