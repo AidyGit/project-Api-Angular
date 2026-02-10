@@ -8,7 +8,7 @@ namespace project.Manage.Models
         public string? Name { get; set; }
         public string? Phone { get; set; }
         public string? Email { get; set; }
-        public string? imgUrl { get; set; }
+        //public string? imgUrl { get; set; }
         public ICollection<DonationsModel> Donations { get; set; } = new List<DonationsModel>();
     }
 }

@@ -16,7 +16,8 @@ namespace project.Manage.Services
         }
         public async Task<IEnumerable<DonorsDto>> GetDonors()
         {
-            return await _donorsRepository.GetDonors();
+            var donors = await _donorsRepository.GetDonors();
+            return donors.Select(d => MapToDonorsDto(d)).ToList();
         }
         public async Task<DonorsDto> AddDonor(DonorsDto donorsDto)
         {
@@ -76,7 +77,28 @@ namespace project.Manage.Services
         //filter donors
         public async Task<IEnumerable<DonorsDto>> FilterDonors(DonorFilterParams donorFilterParams)
         {
-            return await _donorsRepository.FilterDonors(donorFilterParams);
+            var donors = await _donorsRepository.FilterDonors(donorFilterParams);
+            return donors.Select(d => MapToDonorsDto(d)).ToList();
         }
+
+        private static DonorsDto MapToDonorsDto(DonorsModel donors)
+        {
+            return new DonorsDto
+            {
+                Id = donors.Id,
+                Email = donors.Email,
+                Name = donors.Name,
+                Phone = donors.Phone,
+                Donations = donors.Donations.Select(don => new DonationDto
+                {
+                    DescriptionDonation = don.Description,
+                    NameDonation = don.Name,
+                    PriceTiketDonation = don.PriceTiket
+
+                }).ToList()
+
+            };
+        }
+
     }
 }

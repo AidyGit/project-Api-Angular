@@ -35,7 +35,8 @@ namespace project.Manage.Repository
         {
             // חשוב להשתמש ב-Include כדי שנוכל לגשת לשם התרומה/מתנה בדוח
             return await _context.PurchasesModel
-                .Include(p => p.Donations) // טעינת הישות המקושרת
+                .Include(p => p.Donations)
+                .Include(p=>p.User)// טעינת הישות המקושרת
                 .ToListAsync();
         }
     }

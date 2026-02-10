@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DocumentFormat.OpenXml.Spreadsheet;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using project.Manage.Dtos;
 using project.Manage.Interfaces;
 using project.Manage.Models;
 using project.Manage.Repository;
 using System.Drawing;
+using static project.Manage.Controller.DonationController;
 
 namespace project.Manage.Services
 {
@@ -80,7 +82,7 @@ namespace project.Manage.Services
         public async Task<int> GetIdByEmail(string email)
         {
             var donors = await _donationRepository.getDonors();
-            var donor =  donors.FirstOrDefault(d => d.Email == email);
+            var donor = donors.FirstOrDefault(d => d.Email == email);
             if (donor == null)
             {
                 return 0; // מחזירים 0 אם לא נמצא, כדי שהאנגולר ידע שאין תורם כזה
@@ -96,6 +98,31 @@ namespace project.Manage.Services
         string donationName, string donorName, int? minPurchases)
         {
             return await _donationRepository.SearchDonations(donationName, donorName, minPurchases);
+        }
+
+        public async Task<IEnumerable<GetDonationDto>> FilterDonation(DonationFilterParams DonorFilterParams)
+        {
+            var donaotinFilter =  await _donationRepository.FilterDonation(DonorFilterParams);
+            return donaotinFilter.Select(d => MapToDonationDto(d)).ToList();
+
+        }
+
+        public static GetDonationDto MapToDonationDto(DonationsModel donation)
+        {
+            return new GetDonationDto
+            {
+                Id = donation.Id,
+                Name = donation.Name,
+                Description = donation.Description,
+                PriceTiket = donation.PriceTiket,
+                DonorsId = donation.DonorsId,
+                ImageUrl = donation.ImageUrl,
+                // תיקון: הוספת שם התורם מהאובייקט המקושר (עם הגנה מפני Null)
+                DonorName = donation.Donors?.Name ?? "לא ידוע",
+
+                // הגנה מפני Null בשם הקטגוריה (מונע את השגיאה שראינו קודם)
+                CategoryName = donation.Category?.Name ?? "ללא קטגוריה"
+            };
         }
     }
 }

@@ -19,24 +19,9 @@ namespace project.Manage.Repository
         }
 
         //get donors
-        public async Task<IEnumerable<DonorsDto>> GetDonors()
+        public async Task<IEnumerable<DonorsModel>> GetDonors()
         {
-            return await _context.DonorsModel
-                .Include(x => x.Donations)
-                .Select(d => new DonorsDto
-                {
-                    Id = d.Id,
-                    Name = d.Name,
-                    Email = d.Email,
-                    Phone = d.Phone,
-                    Donations = d.Donations.Select(don => new DonationDto
-                    {
-                        DescriptionDonation = don.Description,
-                        NameDonation = don.Name,
-                        PriceTiketDonation = don.PriceTiket
-                        
-                    }).ToList()
-                }).ToListAsync();
+            return await _context.DonorsModel.Include(d=>d.Donations).ToListAsync();
         }
 
         public async Task<DonorsModel> GetDonorsById(int id)
@@ -82,9 +67,9 @@ namespace project.Manage.Repository
 
         }
         //filter donors
-        public async Task<IEnumerable<DonorsDto>> FilterDonors(DonorFilterParams donorFilterParams)
+        public async Task<IEnumerable<DonorsModel>> FilterDonors(DonorFilterParams donorFilterParams)
         {
-            var query = _context.DonorsModel.AsQueryable();
+            var query = _context.DonorsModel.Include(d=>d.Donations).AsQueryable();
             if (!string.IsNullOrEmpty(donorFilterParams.Name))
             {
                 query = query.Where(d => d.Name.Contains(donorFilterParams.Name));
@@ -98,18 +83,7 @@ namespace project.Manage.Repository
                 query = query.Where(d => d.Donations.Any(don => don.Name.Contains(donorFilterParams.NameGift)));
             }
 
-            return await query.Select(d => new DonorsDto
-            {
-                Name = d.Name,
-                Email = d.Email,
-                Phone = d.Phone,
-                Donations = d.Donations.Select(don => new DonationDto
-                {
-                    DescriptionDonation = don.Description,
-                    NameDonation = don.Name,
-                    PriceTiketDonation = don.PriceTiket
-                }).ToList()
-            }).ToListAsync();
+            return await query.ToListAsync();
         }
     }
 }

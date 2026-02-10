@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using project.Manage.Dtos;
 using project.Manage.Models;
+using static project.Manage.Controller.DonationController;
 
 namespace project.Manage.Interfaces
 {
@@ -13,5 +14,6 @@ namespace project.Manage.Interfaces
         Task<IEnumerable<GetDonationWithPurchase>> SearchDonations(string? donationName,string? donorName,int? minPurchases);
         Task<int> GetIdByEmail(string email);
         Task<IEnumerable<CategoryModel>> GetAllCategories();
+        Task<IEnumerable<GetDonationDto>> FilterDonation(DonationFilterParams DonorFilterParams);
     }
 }

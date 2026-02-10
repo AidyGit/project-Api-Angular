@@ -3,6 +3,7 @@ using project.Data;
 using project.Manage.Dtos;
 using project.Manage.Interfaces;
 using project.Manage.Models;
+using static project.Manage.Controller.DonationController;
 
 namespace project.Manage.Repository
 {
@@ -28,7 +29,7 @@ namespace project.Manage.Repository
                 PriceTiket = d.PriceTiket,
                 CategoryName = d.Category.Name,
                 DonorsId = d.DonorsId,
-                DonaorName = d.Donors.Name,
+                DonorName = d.Donors.Name,
                 ImageUrl = d.ImageUrl,
                 WinnerName = _context.RandomModel
                 .Where(r => r.DonationId == d.Id)
@@ -141,6 +142,38 @@ namespace project.Manage.Repository
         public async Task<IEnumerable<CategoryModel>> GetAllCategories()
         {
             return await _context.CategoryModel.ToListAsync();
+        }
+
+        public async Task<IEnumerable<DonationsModel>> FilterDonation(DonationFilterParams DonorFilterParams)
+        {
+            var query = _context.DonationsModel
+                .Include(d => d.Donors)
+                .Include(d => d.PurchasesModel)
+                .Include(d => d.Category)
+                .AsQueryable();
+
+            // סינון לפי שם המתנה - הוספת ToLower למניעת בעיות אותיות
+            if (!string.IsNullOrEmpty(DonorFilterParams.NameDonation))
+            {
+                var searchName = DonorFilterParams.NameDonation.ToLower();
+                query = query.Where(d => d.Name.ToLower().Contains(searchName));
+            }
+
+            // סינון לפי כמות רכישות
+            if (DonorFilterParams.numPurchases.HasValue)
+            {
+                query = query.Where(d => d.PurchasesModel.Count >= DonorFilterParams.numPurchases.Value);
+            }
+
+            // סינון לפי שם התורם - הגנה מפני Null בתוך השאילתה
+            if (!string.IsNullOrEmpty(DonorFilterParams.NameDonor))
+            {
+                var searchDonor = DonorFilterParams.NameDonor.ToLower();
+                // בדיקה שהתורם קיים לפני שניגשים לשם שלו
+                query = query.Where(d => d.Donors != null && d.Donors.Name.ToLower().Contains(searchDonor));
+            }
+
+            return await query.ToListAsync();
         }
     }
 }

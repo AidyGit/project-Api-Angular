@@ -6,13 +6,12 @@ namespace project.Manage.Interfaces
 {
     public interface IDonorsRepository
     {
-        Task<IEnumerable<DonorsDto>> GetDonors();
+        Task<IEnumerable<DonorsModel>> GetDonors();
         Task<DonorsModel> GetDonorsById(int id);
-
         Task<DonorsModel> AddDonor(DonorsDto donorDto);
         Task<bool> DeleteDonor(DonorsModel donor);
         Task<DonorsModel> UpdateDonor(DonorsModel donor);
-        Task<IEnumerable<DonorsDto>> FilterDonors(DonorFilterParams donorFilterParams);
+        Task<IEnumerable<DonorsModel>> FilterDonors(DonorFilterParams donorFilterParams);
 
     }
 }

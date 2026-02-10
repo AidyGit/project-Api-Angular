@@ -83,6 +83,42 @@
   },
   {
     "ContainingType": "project.Manage.Controller.DonationController",
+    "Method": "FilterDonation",
+    "RelativePath": "api/Donation/FilterDonation",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "NameDonation",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "NameDonor",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "numPurchases",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[project.Manage.Dtos.DonorsDto, project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "project.Manage.Controller.DonationController",
     "Method": "SearchDonations",
     "RelativePath": "api/Donation/FilterDonations",
     "HttpMethod": "GET",

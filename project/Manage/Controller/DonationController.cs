@@ -136,5 +136,21 @@ namespace project.Manage.Controller
             var category = await _donationService.GetAllCategories();
             return Ok(category);
         }
+
+        public class DonationFilterParams
+        {
+            public string? NameDonation { get; set; }
+            public string? NameDonor { get; set; }
+            public int? numPurchases { get; set; }
+        }
+        //filter donors by name gift or email
+
+        [Authorize(Roles = "Admin")]
+        [HttpGet("FilterDonation")]
+        public async Task<ActionResult<IEnumerable<DonorsDto>>> FilterDonation([FromQuery] DonationFilterParams DonorFilterParams)
+        {
+            var donors = await _donationService.FilterDonation(DonorFilterParams);
+            return Ok(donors);
+        }
     }
 }
