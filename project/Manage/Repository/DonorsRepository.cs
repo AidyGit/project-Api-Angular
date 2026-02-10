@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DocumentFormat.OpenXml.Office2010.Excel;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using project.Data;
 using project.Manage.Dtos;
@@ -24,6 +25,7 @@ namespace project.Manage.Repository
                 .Include(x => x.Donations)
                 .Select(d => new DonorsDto
                 {
+                    Id = d.Id,
                     Name = d.Name,
                     Email = d.Email,
                     Phone = d.Phone,

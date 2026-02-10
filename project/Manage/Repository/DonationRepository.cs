@@ -6,7 +6,7 @@ using project.Manage.Models;
 
 namespace project.Manage.Repository
 {
-    public class DonationRepository:IDonationRepository
+    public class DonationRepository : IDonationRepository
     {
         private readonly ApplicationDbContext _context;
 
@@ -20,20 +20,31 @@ namespace project.Manage.Repository
         {
 
             // Placeholder logic for getting donations from the database
-            return await _context.DonationsModel.Select(d => new GetDonationDto
+            return await _context.DonationsModel.Include(d => d.Category).Include(d=>d.Donors).Select(d => new GetDonationDto
             {
                 Id = d.Id,
                 Name = d.Name,
                 Description = d.Description,
                 PriceTiket = d.PriceTiket,
-                categoryName = d.Category.Name,
+                CategoryName = d.Category.Name,
                 DonorsId = d.DonorsId,
-                ImageUrl = d.ImageUrl
+                DonaorName = d.Donors.Name,
+                ImageUrl = d.ImageUrl,
+                WinnerName = _context.RandomModel
+                .Where(r => r.DonationId == d.Id)
+                .Select(r => r.WinningPurchase.User.Name) // שולפים את שם המשתמש מהרכישה הזוכה
+                .FirstOrDefault() ?? "אין זוכה עדיין"
 
             }).ToListAsync();
         }
         public async Task<bool> AddDonation(CreateDonationDto donationDto)
         {
+            var donorExists = await _context.DonorsModel.AnyAsync(d => d.Id == donationDto.DonorsId);
+            if (!donorExists)
+            {
+                throw new Exception($"Donor with ID {donationDto.DonorsId} does not exist.");
+            }
+
             var newDonation = new DonationsModel
             {
                 Name = donationDto.Name,
@@ -72,13 +83,64 @@ namespace project.Manage.Repository
             //ID חפוש במסד התונים את התרומה לפי ה
             var existing = await _context.DonationsModel.FindAsync(donation.Id);
 
-            if (existing == null) return null ;
+            if (existing == null) return null;
 
             //עדכון הערכים של התרומה הקיימת עם הערכים החדשים מהאובייקט donationDto
-            _context.Entry(existing).CurrentValues.SetValues(donation);
+            existing.Name = donation.Name;
+            existing.Description = donation.Description;
+            existing.PriceTiket = donation.PriceTiket;
+            existing.CategoryId = donation.CategoryId;
+            existing.DonorsId = donation.DonorsId;
+            existing.ImageUrl = donation.ImageUrl;
 
             await _context.SaveChangesAsync();
+
             return existing;
+        }
+
+        public async Task<IEnumerable<GetDonationWithPurchase>> SearchDonations(
+            string donationName = null,
+            string donorName = null,
+            int? minPurchases = null)
+        {
+            var query = _context.DonationsModel
+                .Include(d => d.PurchasesModel)
+                .Include(d => d.Donors)
+                .AsQueryable();
+
+            if (!string.IsNullOrEmpty(donationName))
+                query = query.Where(d => d.Name.Contains(donationName));
+
+            if (!string.IsNullOrEmpty(donorName))
+                query = query.Where(d => d.Donors.Name.Contains(donorName));
+
+            if (minPurchases.HasValue)
+                query = query.Where(d => d.PurchasesModel.Count >= minPurchases.Value);
+
+            return await query.Select(d => new GetDonationWithPurchase
+            {
+                Name = d.Name,
+                Description = d.Description,
+                PriceTiket = d.PriceTiket,
+                CategoryId = d.CategoryId,
+                DonorsId = d.DonorsId,
+                ImageUrl = d.ImageUrl,
+                Purchases = d.PurchasesModel.Select(p => new PurchasesDto
+                {
+                    DonationId = p.DonationId,
+                    UserId = p.UserId,
+                    PurchaseDate = p.PurchaseDate
+                }).ToList()
+            }).ToListAsync();
+        }
+
+        public async Task<IEnumerable<DonorsModel>> getDonors()
+        {
+            return await _context.DonorsModel.ToListAsync();
+        }
+        public async Task<IEnumerable<CategoryModel>> GetAllCategories()
+        {
+            return await _context.CategoryModel.ToListAsync();
         }
     }
 }

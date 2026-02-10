@@ -22,7 +22,7 @@ namespace project.Customer.Services
 
         }
 
-        public async Task<UserDto.RegisterDto> CreateUser(UserDto.RegisterDto register)
+        public async Task<UserDto.GetUserDto> CreateUser(UserDto.RegisterDto register)
         {
             var user = new UserModel
             {
@@ -76,15 +76,16 @@ namespace project.Customer.Services
             return users;
         }
 
-        private static UserDto.RegisterDto MapToUserDto(UserModel user)
+        private static UserDto.GetUserDto MapToUserDto(UserModel user)
         {
-            return new UserDto.RegisterDto
+            return new UserDto.GetUserDto
             {
                 Name = user.Name,
-                Password = user.Password,
                 UserName = user.UserName,
                 Email = user.Email,
                 Phone = user.Phone,
+                CreatedAt = user.CreatedAt,
+                Role = user.Role        
             };
         }
 

@@ -4,6 +4,5 @@
     {
         public string GiftName { get; set; }
         public decimal TotalRevenue { get; set; }
-
     }
 }

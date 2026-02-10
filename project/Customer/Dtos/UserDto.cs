@@ -6,7 +6,7 @@ namespace project.Customer.Dtos
 {
     public class UserDto
     {
-        public class RegisterDto()
+        public class RegisterDto
         {
             [MaxLength (50),Required]
             public string? Name { get; set; }
@@ -20,7 +20,7 @@ namespace project.Customer.Dtos
             public string? UserName { get; set; }
 
         }
-        public class LoginDto() 
+        public class LoginDto
         {
             [MaxLength(50), Required]
             public string? UserName { get; set; }
@@ -28,14 +28,14 @@ namespace project.Customer.Dtos
             public string? Password { get; set; }
 
         }
-        public class GetUserDto()
+        public class GetUserDto
         {
             public string? Name { get; set; }
             public string? Email { get; set; }
             public string? Phone { get; set; }
             public string? UserName { get; set; }
+            public string Role { get; set; }
             public DateTime CreatedAt { get; set; } = DateTime.Now;
-
         }
     }
     public class LoginResponseDto
@@ -43,7 +43,7 @@ namespace project.Customer.Dtos
         public string Token { get; set; } = string.Empty;
         public string TokenType { get; set; } = "Bearer";
         public int ExpiresIn { get; set; }
-        public RegisterDto User { get; set; } = null!;
+        public GetUserDto User { get; set; } = null!;
     }
 
 }

@@ -25,16 +25,17 @@ Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
     .WriteTo.File("Logs/log-.txt", rollingInterval: RollingInterval.Day)
     .CreateLogger();
-try {
+try
+{
     Log.Information("Starting Store API application");
 
     var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+    // Add services to the container.
 
-builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+    builder.Services.AddControllers();
+    // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+    builder.Services.AddOpenApi();
     builder.Services.AddAuthorization(options =>
     {
         options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
@@ -81,6 +82,17 @@ builder.Services.AddOpenApi();
         };
     });
 
+    builder.Services.AddCors(options =>
+    {
+        options.AddPolicy("AllowAngular",
+            policy =>
+            {
+                policy.WithOrigins("http://localhost:4200") // הכתובת של אנגולר
+                      .AllowAnyHeader()
+                      .AllowAnyMethod();
+            });
+    });
+
     //builder.Services.AddDbContext<MarketDbContext>(options =>
     //        options.UseSqlServer("ConnectionStrings"));
 
@@ -88,41 +100,43 @@ builder.Services.AddOpenApi();
     // Register services
     builder.Services.AddScoped<IUserService, UserService>();
 
-// Gift service
-builder.Services.AddScoped<IGiftService, GiftService>();
+    // Gift service
+    builder.Services.AddScoped<IGiftService, GiftService>();
 
-//Gifts Repo
-builder.Services.AddScoped<IGiftRepository, GiftRepository>();
+    //Gifts Repo
+    builder.Services.AddScoped<IGiftRepository, GiftRepository>();
 
-//Register Repo
-builder.Services.AddScoped<IUserRepository, UserRepository>();
+    //Register Repo
+    builder.Services.AddScoped<IUserRepository, UserRepository>();
 
-// Donors Service
-builder.Services.AddScoped<IDonorsService, DonorService>();
+    // Donors Service
+    builder.Services.AddScoped<IDonorsService, DonorService>();
 
-// Donors Repo
-builder.Services.AddScoped<IDonorsRepository, DonorsRepository>();
+    // Donors Repo
+    builder.Services.AddScoped<IDonorsRepository, DonorsRepository>();
 
-// Donation service
-builder.Services.AddScoped<IDonationService, DonationService>();
+    // Donation service
+    builder.Services.AddScoped<IDonationService, DonationService>();
 
-//Donation Repo
-builder.Services.AddScoped<IDonationRepository, DonationRepository>();
+    //Donation Repo
+    builder.Services.AddScoped<IDonationRepository, DonationRepository>();
 
-// Donation Repo
-builder.Services.AddScoped<IPurchasesRepository, PurchasesRepository>();
+    // Donation Repo
+    builder.Services.AddScoped<IPurchasesRepository, PurchasesRepository>();
 
-//Donation service
-builder.Services.AddScoped<IPurchasesService, PurchasesService>();
+    //Donation service
+    builder.Services.AddScoped<IPurchasesService, PurchasesService>();
 
-// Random Repo
-builder.Services.AddScoped<IRandomRepository, RandomRepository>();
+    // Random Repo
+    builder.Services.AddScoped<IRandomRepository, RandomRepository>();
 
-//Random service
-builder.Services.AddScoped<IRandomService, RandomService>();
+    //Random service
+    builder.Services.AddScoped<IRandomService, RandomService>();
 
-//Token Service
-builder.Services.AddScoped<TokenService>();
+    //Token Service
+    builder.Services.AddScoped<TokenService>();
+    builder.Services.AddHttpContextAccessor();
+
 
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen(c =>
@@ -157,26 +171,26 @@ builder.Services.AddScoped<TokenService>();
     });
     var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
-app.UseHttpsRedirection();
+    // Configure the HTTP request pipeline.
+    if (app.Environment.IsDevelopment())
+    {
+        app.MapOpenApi();
+    }
+    if (app.Environment.IsDevelopment())
+    {
+        app.UseSwagger();
+        app.UseSwaggerUI();
+    }
+    app.UseCors("AllowAngular");
+    app.UseHttpsRedirection();
     app.UseAuthentication();
     app.UseAuthorization();
 
-app.MapControllers();
+    app.MapControllers();
 
-Log.Information("Store API is now running");
+    Log.Information("Store API is now running");
 
-app.Run();
+    app.Run();
 }
 catch (Exception ex)
 {

@@ -68,9 +68,16 @@ namespace project.Customer.Services
             return await _giftRepository.SaveChangesInShoppingCard();
         }
         //get gifts
-        public async Task<IEnumerable<GiftDto.GiftDetailDto>> GetGifts()
+        public async Task<IEnumerable<GiftDto.GiftDetailDto>> GetMyCart(string userName)
         {
-            return await _giftRepository.GetGifts();
+            var findUser = await _userRepository.GetUserByUserName(userName);
+            if (userName == null || findUser == null)
+            {
+                throw new ArgumentException("Invalid giftId or userId not exist");
+            }
+
+
+            return await _giftRepository.GetMyCart(findUser.Id);
         }
 
         //remove from cart
@@ -98,7 +105,6 @@ namespace project.Customer.Services
         }
         public async Task<bool> AddOneToCart(int giftId, string userName)
         {
-            //אחרי שיהיה לנו תוקן נשנה כאן!!!!!
             var findUser = await _userRepository.GetUserByUserName(userName);
             if (userName == null || findUser == null)
             {
@@ -146,9 +152,9 @@ namespace project.Customer.Services
         //    return await _giftRepository.SaveChangesInShoppingCard();
         //}
 
-        public async Task<bool> UpdateStatusCart(int cartId, int quantity)
+        public async Task<bool> UpdateStatusCart(int cartId)
         {
-            return await _giftRepository.UpdateStatusCart(cartId, quantity);
+            return await _giftRepository.UpdateStatusCart(cartId);
         }
     }
 }

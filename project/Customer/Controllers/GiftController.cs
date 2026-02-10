@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using project.Customer.Dtos;
 using project.Customer.Interfaces;
 using project.Models.Customer;
+using System.Security.Claims;
 
 namespace project.Customer.Controllers
 {
@@ -12,59 +13,68 @@ namespace project.Customer.Controllers
     public class GiftController : ControllerBase
     {
         private readonly IGiftService _giftService;
-        private readonly ILogger <GiftController> _logger;
-
-        public GiftController(IGiftService giftService,ILogger<GiftController> logger)
+        private readonly ILogger<GiftController> _logger;
+        public GiftController(IGiftService giftService, ILogger<GiftController> logger)
         {
             _logger = logger;
             _giftService = giftService;
         }
-        
+
         //Get all gifts
-        [HttpGet("Gifts")]
-        public async Task<IEnumerable<GiftDto.GiftDetailDto>> GetAllGifts()
+        [Authorize]
+        [HttpGet("MyCart")]
+        public async Task<ActionResult<IEnumerable<GiftDto.GiftDetailDto>>> GetMyCart()
         {
+            foreach (var claim in User.Claims)
+            {
+                Console.WriteLine($"Type: {claim.Type}, Value: {claim.Value}");
+            }
+            //חילוץ שם משתמש מהטוקן
+            var userName = User.FindFirst("unique_name")?.Value
+                               ?? User.FindFirst(System.Security.Claims.ClaimTypes.Name)?.Value
+                               ?? User.Identity?.Name;
+            if (string.IsNullOrEmpty(userName))
+                return Unauthorized("User is not identified");
+
             try
             {
-                var gifts = await _giftService.GetGifts();
-
-                // Ensure the return type matches IEnumerable<GiftDto.GiftDetailDto>
-                if (gifts == null)
-                {
-                    return Enumerable.Empty<GiftDto.GiftDetailDto>();
-                }
-
-                return gifts;
+                var gifts = await _giftService.GetMyCart(userName);
+                return Ok(gifts ?? Enumerable.Empty<GiftDto.GiftDetailDto>());
             }
-            catch (ArgumentException ex)
+            catch (Exception ex)
             {
-                throw new ArgumentException(ex.Message);
+                _logger.LogError(ex, "Error getting gifts");
+                return BadRequest(ex.Message);
             }
         }
+
         public class UpdateCartRequest
         {
+            public int giftId { get; set; }
             public string userName { get; set; }
             public int quantity { get; set; }
         }
 
         // Add to cart
-        [HttpPost("AddToCart:id")]
-        public async Task<ActionResult<bool>> AddGiftToCart([FromQuery] int giftId, [FromBody] UpdateCartRequest request)
+        [Authorize]
+        [HttpPost("AddToCart")]
+        public async Task<ActionResult<bool>> AddGiftToCart([FromBody] UpdateCartRequest request)
         {
             try
             {
-                var result = await _giftService.AddGiftToCart(giftId, request.userName, request.quantity);
+                var result = await _giftService.AddGiftToCart(request.giftId, request.userName, request.quantity);
 
                 return Ok(result);
             }
             catch (ArgumentException ex)
             {
-                throw new ArgumentException(ex.Message);
+                return BadRequest(new { message = ex.Message });
             }
         }
+        [Authorize]
 
-        [HttpPost("AddOneToCart:id")]
-        public async Task<ActionResult<bool>> AddOneToCart([FromQuery] int giftId, string userName)
+        [HttpPut("AddOneToCart")]
+        public async Task<ActionResult<bool>> AddOneToCart([FromQuery] int giftId,[FromBody] string userName)
         {
             try
             {
@@ -80,7 +90,8 @@ namespace project.Customer.Controllers
 
 
         // Remove from cart
-        [HttpDelete("RemoveFromCart:id")]
+        [Authorize]
+        [HttpDelete("RemoveFromCart")]
         public async Task<ActionResult<bool>> RemoveGiftFromCart([FromQuery] int giftId, [FromBody] string userName)
         {
             try
@@ -95,7 +106,8 @@ namespace project.Customer.Controllers
         }
 
         // Remove one from cart
-        [HttpDelete("RemoveOneFromCart:id")]
+        [Authorize]
+        [HttpPut("RemoveOneFromCart")]
         public async Task<ActionResult<bool>> RemoveOne([FromQuery] int giftId, [FromBody] string userName)
         {
             try
@@ -123,14 +135,15 @@ namespace project.Customer.Controllers
         //        throw new ArgumentException(ex.Message);
         //    }
         //}
+        // Purchase and update cart status
+        [Authorize]
+        [HttpPut("UpdateStatusCart")]
 
-        [HttpPut("UpdateStatusCart:id")]
-
-        public async Task<ActionResult<bool>> UpdateStatusCart([FromQuery] int cartId, int quantity)
+        public async Task<ActionResult<bool>> UpdateStatusCart([FromQuery] int cartId)
         {
             try
             {
-                var result = await _giftService.UpdateStatusCart(cartId, quantity);
+                var result = await _giftService.UpdateStatusCart(cartId);
                 return Ok(result);
             }
             catch (ArgumentException ex)

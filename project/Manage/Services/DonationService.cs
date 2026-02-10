@@ -1,4 +1,5 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 using project.Manage.Dtos;
 using project.Manage.Interfaces;
 using project.Manage.Models;
@@ -75,6 +76,26 @@ namespace project.Manage.Services
             await _donationRepository.UpdateDonation(donation);
             return updatedDonation;
 
+        }
+        public async Task<int> GetIdByEmail(string email)
+        {
+            var donors = await _donationRepository.getDonors();
+            var donor =  donors.FirstOrDefault(d => d.Email == email);
+            if (donor == null)
+            {
+                return 0; // מחזירים 0 אם לא נמצא, כדי שהאנגולר ידע שאין תורם כזה
+            }
+            return donor.Id;
+        }
+        public async Task<IEnumerable<CategoryModel>> GetAllCategories()
+        {
+            return await _donationRepository.GetAllCategories();
+        }
+
+        public async Task<IEnumerable<GetDonationWithPurchase>> SearchDonations(
+        string donationName, string donorName, int? minPurchases)
+        {
+            return await _donationRepository.SearchDonations(donationName, donorName, minPurchases);
         }
     }
 }

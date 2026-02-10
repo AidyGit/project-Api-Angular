@@ -19,14 +19,15 @@ namespace project.Manage.Controller
 
         //c-tor
 
-        public DonationController(IDonationService donationService,ILogger<DonationController> logger)
+        public DonationController(IDonationService donationService, ILogger<DonationController> logger)
         {
             _donationService = donationService;
             _logger = logger;
         }
 
-
-        [HttpGet("Donations")]
+        //GetDonations
+        //[Authorize(Roles = "Admin")]
+        [HttpGet]
         public async Task<ActionResult<IEnumerable<GetDonationDto>>> GetDonations()
         {
             try
@@ -36,28 +37,35 @@ namespace project.Manage.Controller
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, "Error fetching donations"); // CHANGED: הוספת לוג
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
 
-        [Authorize(Roles = "Admin")]
         //AddDonation
+        [Authorize(Roles = "Admin")]
         [HttpPost("AddDonation")]
-        public async Task<ActionResult<bool>> AddDonation([FromQuery] CreateDonationDto donationDto)
+        public async Task<ActionResult<bool>> AddDonation([FromBody] CreateDonationDto donationDto)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             try
             {
                 return (Ok(await _donationService.AddDonation(donationDto)));
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, "Error adding donation"); // CHANGED: הוספת לוג
                 return BadRequest(new { message = ex.Message });
             }
         }
         //DeleteDonation
         [Authorize(Roles = "Admin")]
         [HttpDelete("DeleteDonation/{id}")]
-        public async Task<ActionResult> DeleteDonation([FromQuery] int id)
+        public async Task<ActionResult> DeleteDonation(int id)
         {
             try
             {
@@ -68,11 +76,13 @@ namespace project.Manage.Controller
                 }
                 else
                 {
+
                     return NotFound(new { message = "Donor not found." });
                 }
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, "Error deleting donation"); // CHANGED: הוספת לוג
                 return BadRequest(new { message = ex.Message });
             }
 
@@ -80,19 +90,51 @@ namespace project.Manage.Controller
         //UpdateDonation
         [Authorize(Roles = "Admin")]
         [HttpPut("UpdateDonation/{id}")]
-        public async Task<ActionResult<DonorsModel>> UpdateDonation([FromQuery] int id, CreateDonationDto donorToUp)
+        public async Task<ActionResult<DonorsModel>> UpdateDonation(int id, [FromBody] CreateDonationDto donorToUp)
         {
             try
             {
+                if (donorToUp == null) return BadRequest();
                 var donor = await _donationService.UpdateDonation(id, donorToUp);
                 return Ok(donor);
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, "Error updating donation"); // CHANGED: הוספת לוג
                 return BadRequest(new { message = ex.Message });
             }
         }
+        [Authorize(Roles = "Admin")]
+        [HttpGet("FilterDonations")]
+        public async Task<ActionResult<IEnumerable<GetDonationWithPurchase>>> SearchDonations(
+        [FromQuery] string? donationName,
+        [FromQuery] string? donorName,
+        [FromQuery] int? minPurchases)
+        {
+            try
+            {
+                var results = await _donationService.SearchDonations(donationName, donorName, minPurchases);
+                return Ok(results);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error searching donations");
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+        [Authorize(Roles = "Admin")]
+        [HttpGet("GetIdByEmail")]
+        public async Task<ActionResult<int>> getUserIdByEmail([FromQuery] string email)
+        {
+            var id = await _donationService.GetIdByEmail(email);
+            return Ok(id);
+        }
+
+        [HttpGet("categories")]
+        public async Task<ActionResult<IEnumerable<CategoryModel>>> GetAllCategories()
+        {
+            var category = await _donationService.GetAllCategories();
+            return Ok(category);
+        }
     }
-
-
 }

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using project.Manage.Dtos;
 using project.Manage.Interfaces;
+using project.Manage.Models;
 
 namespace project.Manage.Controller
 {
@@ -18,8 +19,8 @@ namespace project.Manage.Controller
         }
 
         [Authorize(Roles = "Admin")]
-        [HttpGet("Puchases/{id}")]
-        public async Task<ActionResult<GetDonationWithPurchase>> GetPuchasesByDonation([FromQuery] int id)
+        [HttpGet("Purchases/{id}")]
+        public async Task<ActionResult<IEnumerable< PurchasesDto>>> GetPuchasesByDonation(int id)
         {
             try
             {
@@ -34,7 +35,7 @@ namespace project.Manage.Controller
 
         [Authorize(Roles = "Admin")]
         [HttpGet("Purchases")]
-        public async Task<ActionResult<GetDonationWithPurchase>> GetPurchases()
+        public async Task<ActionResult<IEnumerable<PurchasesDto>>> GetPurchases()
         {
             try
             {
@@ -46,6 +47,23 @@ namespace project.Manage.Controller
                 return BadRequest(new { message = ex.Message });
             }
         }
+
+        [Authorize(Roles = "Admin")]
+        [HttpGet("PurchasesBySort")]
+        public async Task<ActionResult<IEnumerable<PurchasesDto>>> GetPurchasesBySort([FromQuery] string sortBy)
+        {
+            try
+            {
+                return Ok(await _puchasesService.GetPurchasesBySort(sortBy));
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+
+
 
         [Authorize(Roles = "Admin")]
         [HttpGet("download-revenue")]

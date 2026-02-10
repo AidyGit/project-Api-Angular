@@ -6,7 +6,7 @@ namespace project.Customer.Interfaces
     public interface IUserService
     {
         // מחזיר את פרטי המשתמש שנוצר
-        Task<UserDto.RegisterDto> CreateUser(UserDto.RegisterDto userDto);
+        Task<UserDto.GetUserDto> CreateUser(UserDto.RegisterDto userDto);
 
         Task<IEnumerable<UserDto.GetUserDto>> GetAllUsers();
 

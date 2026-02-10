@@ -699,7 +699,6 @@ F:\project-Api\project\obj\Debug\net9.0\staticwebassets.build.json
 F:\project-Api\project\obj\Debug\net9.0\staticwebassets.build.json.cache
 F:\project-Api\project\obj\Debug\net9.0\staticwebassets.development.json
 F:\project-Api\project\obj\Debug\net9.0\staticwebassets.build.endpoints.json
-F:\project-Api\project\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 F:\project-Api\project\obj\Debug\net9.0\project.csproj.Up2Date
 F:\project-Api\project\obj\Debug\net9.0\project.dll
 F:\project-Api\project\obj\Debug\net9.0\refint\project.dll
@@ -728,3 +727,4 @@ F:\project-Api\project\bin\Debug\net9.0\System.IO.Pipelines.dll
 F:\project-Api\project\bin\Debug\net9.0\System.Text.Encodings.Web.dll
 F:\project-Api\project\bin\Debug\net9.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 F:\project-Api\project\bin\Debug\net9.0\runtimes\win\lib\net9.0\System.Text.Encodings.Web.dll
+F:\project-Api\project\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

@@ -16,42 +16,50 @@ namespace project.Manage.Services
             _purchasesRepository = purchasesRepository;
         }
 
-        public async Task<IEnumerable<GetDonationWithPurchase>> GetPuchasesByDonation(int donationId)
+        public async Task<IEnumerable<PurchasesDto>> GetPuchasesByDonation(int donationId)
         {
             var purchases = await _purchasesRepository.GetPuchasesByDonation(donationId);
             var donationWithPurchaseList = purchases.Select(MapToPurchaseDto).ToList();
             return donationWithPurchaseList;
         }
 
-        public async Task<IEnumerable<GetDonationWithPurchase>> GetPuchases()
+        public async Task<IEnumerable<PurchasesDto>> GetPuchases()
         {
             var purchases = await _purchasesRepository.GetPuchases();
-            var donationWithPurchaseList = purchases.Select(MapToPurchaseDto).ToList();
-            return donationWithPurchaseList;
+            var purchasesMap = purchases.Select(MapToPurchaseDto).ToList(); // Fixed: Use Select to map each item in the collection
+            return purchasesMap;
         }
 
-        private static GetDonationWithPurchase MapToPurchaseDto(PurchasesModel Purchases)
+        private static PurchasesDto MapToPurchaseDto(PurchasesModel Purchases)
         {
-            return new GetDonationWithPurchase
+            return new PurchasesDto
             {
-                DonorsId = Purchases.DonationId,
-                Description = Purchases.Donations.Description,
-                CategoryId = Purchases.Donations.CategoryId,
-                ImageUrl = Purchases.Donations.ImageUrl,
-                Name = Purchases.Donations.Name,
-                PriceTiket = Purchases.Donations.PriceTiket,
-                Purchases = Purchases.Donations.PurchasesModel.Select(p => new PurchasesDto
-                {
-                    UserId = p.UserId,
-                    PurchaseDate = p.PurchaseDate
-                }).ToList()
+                UserId = Purchases.UserId,
+                PurchaseDate = Purchases.PurchaseDate,
+                DonationId = Purchases.DonationId,
+                ShoppingCartId = Purchases.ShoppingCartId ?? 0 
+            };
+        }
+
+        public async Task<IEnumerable<PurchasesDto>> GetPurchasesBySort(string sortBy)
+        {
+            var purchases = await _purchasesRepository.GetPuchasesWithDonation();
+            return sortBy switch
+            {
+                "price_high" => purchases.OrderByDescending(p => p.Donations.PriceTiket).Select(MapToPurchaseDto),
+                //"price_low" => purchases.OrderBy(p => p.Donations.PriceTiket).Select(MapToPurchaseDto),
+                "most_purchased" => purchases.GroupBy(p => p.DonationId)
+                                              .OrderByDescending(g => g.Count())
+                                              .SelectMany(g => g)
+                                              .Select(MapToPurchaseDto),
+                _ => purchases.OrderByDescending(p => p.PurchaseDate).Select(MapToPurchaseDto)
             };
         }
 
         public async Task<byte[]> GetRevenueExcelFileAsync()
         {
             // 1. שליפת הנתונים מהריפוזיטורי
-            var allPurchases = await _purchasesRepository.GetPuchases();
+            var allPurchases = await _purchasesRepository.GetPuchasesWithDonation();
 
             // 2. יצירת הדוח והתאמה ל-DTO שלך
             var reportData = allPurchases

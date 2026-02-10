@@ -1,6 +1,26 @@
 [
   {
     "ContainingType": "project.Manage.Controller.DonationController",
+    "Method": "GetDonations",
+    "RelativePath": "api/Donation",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[project.Manage.Dtos.GetDonationDto, project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "project.Manage.Controller.DonationController",
     "Method": "AddDonation",
     "RelativePath": "api/Donation/AddDonation",
     "HttpMethod": "POST",
@@ -8,39 +28,34 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Name",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Description",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "PriceTiket",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "CategoryId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "DonorsId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "ImageUrl",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "donationDto",
+        "Type": "project.Manage.Dtos.CreateDonationDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
         "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "project.Manage.Controller.DonationController",
+    "Method": "GetAllCategories",
+    "RelativePath": "api/Donation/categories",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[project.Manage.Models.CategoryModel, project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -61,11 +76,6 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "id",
-        "Type": "",
         "IsRequired": true
       }
     ],
@@ -73,15 +83,57 @@
   },
   {
     "ContainingType": "project.Manage.Controller.DonationController",
-    "Method": "GetDonations",
-    "RelativePath": "api/Donation/Donations",
+    "Method": "SearchDonations",
+    "RelativePath": "api/Donation/FilterDonations",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "donationName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "donorName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "minPurchases",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[project.Manage.Dtos.GetDonationDto, project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[project.Manage.Dtos.GetDonationWithPurchase, project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "project.Manage.Controller.DonationController",
+    "Method": "getUserIdByEmail",
+    "RelativePath": "api/Donation/GetIdByEmail",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Int32",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -102,16 +154,11 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       },
       {
         "Name": "donorToUp",
         "Type": "project.Manage.Dtos.CreateDonationDto",
-        "IsRequired": true
-      },
-      {
-        "Name": "id",
-        "Type": "",
         "IsRequired": true
       }
     ],
@@ -136,24 +183,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Name",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Email",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Phone",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Donations",
-        "Type": "System.Collections.Generic.List\u00601[[project.Manage.Dtos.DonationDto, project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "IsRequired": false
+        "Name": "donorDto",
+        "Type": "project.Manage.Dtos.DonorsDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
@@ -179,11 +211,6 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "id",
-        "Type": "",
         "IsRequired": true
       }
     ],
@@ -256,16 +283,11 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       },
       {
         "Name": "donorToUp",
         "Type": "project.Manage.Dtos.DonorsUpdateDto",
-        "IsRequired": true
-      },
-      {
-        "Name": "id",
-        "Type": "",
         "IsRequired": true
       }
     ],
@@ -284,8 +306,8 @@
   {
     "ContainingType": "project.Customer.Controllers.GiftController",
     "Method": "AddOneToCart",
-    "RelativePath": "api/Gift/AddOneToCart:id",
-    "HttpMethod": "POST",
+    "RelativePath": "api/Gift/AddOneToCart",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -297,7 +319,7 @@
       {
         "Name": "userName",
         "Type": "System.String",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
@@ -315,16 +337,11 @@
   {
     "ContainingType": "project.Customer.Controllers.GiftController",
     "Method": "AddGiftToCart",
-    "RelativePath": "api/Gift/AddToCart:id",
+    "RelativePath": "api/Gift/AddToCart",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
-      {
-        "Name": "giftId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
       {
         "Name": "request",
         "Type": "project.Customer.Controllers.GiftController\u002BUpdateCartRequest",
@@ -345,8 +362,8 @@
   },
   {
     "ContainingType": "project.Customer.Controllers.GiftController",
-    "Method": "GetAllGifts",
-    "RelativePath": "api/Gift/Gifts",
+    "Method": "GetMyCart",
+    "RelativePath": "api/Gift/MyCart",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -366,7 +383,7 @@
   {
     "ContainingType": "project.Customer.Controllers.GiftController",
     "Method": "RemoveGiftFromCart",
-    "RelativePath": "api/Gift/RemoveFromCart:id",
+    "RelativePath": "api/Gift/RemoveFromCart",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -397,8 +414,8 @@
   {
     "ContainingType": "project.Customer.Controllers.GiftController",
     "Method": "RemoveOne",
-    "RelativePath": "api/Gift/RemoveOneFromCart:id",
-    "HttpMethod": "DELETE",
+    "RelativePath": "api/Gift/RemoveOneFromCart",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -428,18 +445,13 @@
   {
     "ContainingType": "project.Customer.Controllers.GiftController",
     "Method": "UpdateStatusCart",
-    "RelativePath": "api/Gift/UpdateStatusCart:id",
+    "RelativePath": "api/Gift/UpdateStatusCart",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "cartId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "quantity",
         "Type": "System.Int32",
         "IsRequired": false
       }
@@ -468,26 +480,15 @@
   },
   {
     "ContainingType": "project.Manage.Controller.PurchasesController",
-    "Method": "GetPuchasesByDonation",
-    "RelativePath": "api/Purchases/Puchases/{id}",
+    "Method": "GetPurchases",
+    "RelativePath": "api/Purchases/Purchases",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "id",
-        "Type": "",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "project.Manage.Dtos.GetDonationWithPurchase",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[project.Manage.Dtos.PurchasesDto, project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -499,15 +500,47 @@
   },
   {
     "ContainingType": "project.Manage.Controller.PurchasesController",
-    "Method": "GetPurchases",
-    "RelativePath": "api/Purchases/Purchases",
+    "Method": "GetPuchasesByDonation",
+    "RelativePath": "api/Purchases/Purchases/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": [
       {
-        "Type": "project.Manage.Dtos.GetDonationWithPurchase",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[project.Manage.Dtos.PurchasesDto, project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "project.Manage.Controller.PurchasesController",
+    "Method": "GetPurchasesBySort",
+    "RelativePath": "api/Purchases/PurchasesBySort",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[project.Manage.Dtos.PurchasesDto, project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

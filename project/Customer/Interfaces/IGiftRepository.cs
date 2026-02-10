@@ -6,7 +6,7 @@ namespace project.Customer.Interfaces
 {
     public interface IGiftRepository
     {
-        Task<IEnumerable<GiftDto.GiftDetailDto>> GetGifts();
+        Task<IEnumerable<GiftDto.GiftDetailDto>> GetMyCart(int userId);
         //Task<bool> AddGiftToCart(int giftId, string userName);
         Task<DonationsModel> FindGiftById(int giftId);
         Task CreateShoppingCart(ShoppingCartModel newCart);
@@ -15,6 +15,6 @@ namespace project.Customer.Interfaces
         Task<bool> RemoveOne(int giftId, int userId);
         Task<bool> AddOneToCart(int giftId, int userId);
         Task<ShoppingCartModel> GetOrCreateActiveCart(int userId);
-        Task<bool> UpdateStatusCart(int cartId, int quantity);
+        Task<bool> UpdateStatusCart(int cartId);
     }
 }

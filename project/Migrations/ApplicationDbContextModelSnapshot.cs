@@ -103,6 +103,9 @@ namespace project.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
+                    b.Property<string>("imgUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("DonorsModel");
@@ -139,7 +142,7 @@ namespace project.Migrations
                     b.ToTable("PurchasesModel");
                 });
 
-            modelBuilder.Entity("project.Manage.Models.RandonModel", b =>
+            modelBuilder.Entity("project.Manage.Models.RandomModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -150,9 +153,6 @@ namespace project.Migrations
                     b.Property<int>("DonationId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("DonationsId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("RaffleDate")
                         .HasColumnType("datetime2");
 
@@ -161,11 +161,11 @@ namespace project.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DonationsId");
+                    b.HasIndex("DonationId");
 
                     b.HasIndex("WinningPurchaseId");
 
-                    b.ToTable("RandonModel");
+                    b.ToTable("RandomModel");
                 });
 
             modelBuilder.Entity("project.Models.Customer.GiftShoppingCartModel", b =>
@@ -179,9 +179,6 @@ namespace project.Migrations
                     b.Property<int>("DonationId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("DonationsId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
@@ -190,7 +187,7 @@ namespace project.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DonationsId");
+                    b.HasIndex("DonationId");
 
                     b.HasIndex("ShoppingCartId");
 
@@ -306,19 +303,21 @@ namespace project.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("project.Manage.Models.RandonModel", b =>
+            modelBuilder.Entity("project.Manage.Models.RandomModel", b =>
                 {
-                    b.HasOne("project.Manage.Models.DonationsModel", "Donations")
+                    b.HasOne("project.Manage.Models.DonationsModel", "Donation")
                         .WithMany()
-                        .HasForeignKey("DonationsId");
+                        .HasForeignKey("DonationId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("project.Manage.Models.PurchasesModel", "WinningPurchase")
                         .WithMany()
                         .HasForeignKey("WinningPurchaseId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("Donations");
+                    b.Navigation("Donation");
 
                     b.Navigation("WinningPurchase");
                 });
@@ -327,7 +326,9 @@ namespace project.Migrations
                 {
                     b.HasOne("project.Manage.Models.DonationsModel", "Donations")
                         .WithMany()
-                        .HasForeignKey("DonationsId");
+                        .HasForeignKey("DonationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("project.Models.Customer.ShoppingCartModel", "ShoppingCart")
                         .WithMany("GiftShoppingCart")

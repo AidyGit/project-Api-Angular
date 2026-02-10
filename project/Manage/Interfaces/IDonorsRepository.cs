@@ -13,5 +13,6 @@ namespace project.Manage.Interfaces
         Task<bool> DeleteDonor(DonorsModel donor);
         Task<DonorsModel> UpdateDonor(DonorsModel donor);
         Task<IEnumerable<DonorsDto>> FilterDonors(DonorFilterParams donorFilterParams);
+
     }
 }

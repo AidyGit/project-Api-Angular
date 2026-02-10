@@ -4,7 +4,7 @@ namespace project.Customer.Interfaces
 {
     public interface IGiftService
     {
-        Task<IEnumerable<GiftDto.GiftDetailDto>> GetGifts();
+        Task<IEnumerable<GiftDto.GiftDetailDto>> GetMyCart(string userName);
         Task<bool> AddGiftToCart(int giftId, string userName,int quantity);
         //Task<bool> RemoveGiftFromCart(int giftId, int userId);
         //Task<Models.Customer.ShoppingCartModel?> GetShoppingCartByUserId(int userId);
@@ -12,6 +12,6 @@ namespace project.Customer.Interfaces
         Task<bool> RemoveOne(int giftId, string userName);
         Task<bool> AddOneToCart(int giftId, string userName);
         //Task<bool> UpdateCart(int giftId, string userName,int quantity);
-        Task<bool> UpdateStatusCart(int cartId, int quantity);
+        Task<bool> UpdateStatusCart(int cartId);
     }
 }

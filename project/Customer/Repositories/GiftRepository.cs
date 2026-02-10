@@ -1,10 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DocumentFormat.OpenXml.Office2010.Excel;
+using Microsoft.EntityFrameworkCore;
 using project.Customer.Dtos;
 using project.Customer.Interfaces;
 using project.Data;
 using project.Manage.Models;
 using project.Models.Customer;
 using System.Linq;
+using static project.Customer.Dtos.GiftDto;
 namespace project.Customer.Repositories
 {
     public class GiftRepository : IGiftRepository
@@ -45,21 +47,33 @@ namespace project.Customer.Repositories
 
             return activeCart;
         }
-        public async Task<IEnumerable<GiftDto.GiftDetailDto>> GetGifts()
+        // get all gifts from cart
+        public async Task<IEnumerable<GiftDetailDto>> GetMyCart(int userId)
         {
-            return await _context.DonationsModel.Include(d => d.Category).Select(u => new GiftDto.GiftDetailDto
-            {
-                Description = u.Description,
-                Name = u.Name,
-                Category = u.CategoryId,
-                PriceTiket = u.PriceTiket,
-                ImageUrl = u.ImageUrl
-            })
-            .OrderBy(g => g.PriceTiket)
-            .ThenBy(g => g.Category)
-            .ToListAsync();
-        }
+            return await _context.GiftShoppingCartModel
+.Where(item => item.ShoppingCart.UserId == userId &&
+                       item.ShoppingCart.Status == CartStatus.Draft).Select(item => new GiftDetailDto
+                {
+                    // חשוב: ודאי אם זה DonationId או DonationsId לפי המודל שלך
+                    Id = item.DonationId,
 
+                    // שימוש ב-Navigation Property - "Donations" (עם s) כפי שמופיע ב-ThenInclude שלך
+                    Name = item.Donations != null ? item.Donations.Name : "מתנה לא ידועה",
+
+                    Description = item.Donations != null ? item.Donations.Description : string.Empty,
+
+                    PriceTiket = item.Donations != null ? item.Donations.PriceTiket : 0,
+
+                    ImageUrl = item.Donations != null ? item.Donations.ImageUrl : string.Empty,
+
+                    Category = item.Donations != null ? item.Donations.CategoryId : 0,
+
+                    Quantity = item.Quantity,
+                    ShoppingCartId = item.ShoppingCartId
+                })
+                .OrderBy(g => g.PriceTiket)
+                .ToListAsync();
+        }
         //func to service to save changes in sql
         public async Task CreateShoppingCart(ShoppingCartModel newCart)
         {
@@ -69,7 +83,7 @@ namespace project.Customer.Repositories
         //func to service find the gift with id
         public async Task<DonationsModel?> FindGiftById(int giftId)
         {
-            return await _context.DonationsModel.FindAsync(giftId);
+            return await _context.DonationsModel.FirstOrDefaultAsync(d=>d.Id == giftId);
         }
 
         public async Task<bool> SaveChangesInShoppingCard()
@@ -123,17 +137,22 @@ namespace project.Customer.Repositories
         //add one to cart
         public async Task<bool> AddOneToCart(int giftId, int userId)
         {
+            // חיפוש לפי השם הנכון של השדה בטבלה (DonationsId)
             var giftToAdd = await _context.GiftShoppingCartModel
-            .Where(g => g.DonationId == giftId && g.ShoppingCart.UserId == userId)
-            .FirstOrDefaultAsync();
+                .Where(g => g.DonationId == giftId && g.ShoppingCart.UserId == userId)
+                .FirstOrDefaultAsync();
 
             if (giftToAdd == null)
             {
-                return false; // Return false if no matching gift is found
+                // הדפסה שתעזור לך לראות ב-Console אם השורה בכלל נמצאה
+                Console.WriteLine($"[DEBUG] GiftId {giftId} NOT FOUND for UserId {userId}");
+                return false;
             }
 
             giftToAdd.Quantity += 1;
             var res = await _context.SaveChangesAsync();
+
+            // אם res > 0 זה אומר שהשינוי נשמר פיזית ב-SQL
             return res > 0;
         }
 
@@ -266,13 +285,18 @@ namespace project.Customer.Repositories
         //    return statusChanged || purchasesAdded;
         //}
 
-        public async Task<bool> UpdateStatusCart(int cartId, int quantity)
+        public async Task<bool> UpdateStatusCart(int cartId)
         {
             // טעינה ספציפית של העגלה עם הפריטים שלה
             var cart = await _context.ShoppingCartModel
                 .Include(c => c.GiftShoppingCart)
                 .ThenInclude(g => g.Donations)
                 .FirstOrDefaultAsync(c => c.Id == cartId);
+
+            //if (RandonModel.RaffleDate < DateTime.Now)
+            //{
+            //    throw new InvalidOperationException("Cannot complete purchase after the raffle date.");
+            //}
 
             if (cart == null) return false;
 

@@ -2,6 +2,7 @@
 using project.Manage.Dtos;
 using project.Manage.Interfaces;
 using project.Manage.Function;
+using Microsoft.AspNetCore.Authorization;
 
 namespace project.Manage.Controller
 {
@@ -18,7 +19,7 @@ namespace project.Manage.Controller
             _logger = logger;
 
         }
-
+        [Authorize (Roles = "Admin")]
         [HttpGet("WinnerByDonation")]
         public async Task<ActionResult> GetWinnerByDonation()
         {

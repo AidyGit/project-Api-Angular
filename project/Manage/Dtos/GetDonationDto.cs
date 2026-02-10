@@ -9,8 +9,9 @@ namespace project.Manage.Dtos
         public string Description { get; set; }
         public int PriceTiket { get; set; }
         public string? ImageUrl { get; set; }
-        public string categoryName { get; set; }
+        public string CategoryName { get; set; }
         public int DonorsId { get; set; }
+        public string WinnerName { get; set; }
     }
     //public class CategoryDto
     //{

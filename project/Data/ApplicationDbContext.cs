@@ -18,8 +18,8 @@ namespace project.Data
         public DbSet<DonationsModel> DonationsModel { get; set; }
         public DbSet<DonorsModel> DonorsModel { get; set; }
         public DbSet<PurchasesModel> PurchasesModel { get; set; }
-        public DbSet<RandonModel> RandonModel { get; set; }
-
+        public DbSet<RandomModel> RandomModel { get; set; }
+        public DbSet<CategoryModel> CategoryModel { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -65,6 +65,20 @@ namespace project.Data
             modelBuilder.Entity<CategoryModel>(e =>
             {
                 e.Property(e => e.Name).IsRequired().HasMaxLength(50);
+            });
+            modelBuilder.Entity<RandomModel>(e =>
+            {
+                // הגדרת הקשר לתרומה ללא מחיקה משורשרת כפולה
+                e.HasOne(r => r.Donation)
+                 .WithMany()
+                 .HasForeignKey(r => r.DonationId)
+                 .OnDelete(DeleteBehavior.Restrict); // שינוי ל-Restrict
+
+                // הגדרת הקשר לרכישה ללא מחיקה משורשרת כפולה
+                e.HasOne(r => r.WinningPurchase)
+                 .WithMany()
+                 .HasForeignKey(r => r.WinningPurchaseId)
+                 .OnDelete(DeleteBehavior.Restrict); // שינוי ל-Restrict
             });
         }
     }

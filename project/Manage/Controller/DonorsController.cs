@@ -31,7 +31,7 @@ namespace project.Manage.Controller
         //AddDonor
         [Authorize(Roles = "Admin")]
         [HttpPost("AddDonor")]
-        public async Task<ActionResult<bool>> AddDonor([FromQuery] DonorsDto donorDto)
+        public async Task<ActionResult<bool>> AddDonor([FromBody] DonorsDto donorDto)
         {
             try
             {
@@ -45,7 +45,7 @@ namespace project.Manage.Controller
         //DeleteDonor
         [Authorize(Roles = "Admin")]
         [HttpDelete("DeleteDonor/{id}")]
-        public async Task<ActionResult> DeleteDonor([FromQuery] int id)
+        public async Task<ActionResult> DeleteDonor(int id)
         {
             var result = await _donorService.DeleteDonor(id);
             if (result)
@@ -57,10 +57,10 @@ namespace project.Manage.Controller
                 return NotFound(new { message = "Donor not found." });
             }
         }
-        //ApdateDonor
+        //UpdateDonor
         [Authorize(Roles = "Admin")]
         [HttpPut("UpdateDonor/{id}")]
-        public async Task<ActionResult<DonorsModel>> UpdateDonor([FromQuery] int id, DonorsUpdateDto donorToUp)
+        public async Task<ActionResult<DonorsModel>> UpdateDonor( int id, DonorsUpdateDto donorToUp)
         {
             var donor = await _donorService.UpdateDonor(id, donorToUp);
             return Ok(donor);

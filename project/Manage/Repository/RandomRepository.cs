@@ -43,24 +43,38 @@ namespace project.Manage.Repository
                 if (user == null)
                     continue;
 
+                var newRecord = new RandomModel // ודאי שזה שם המודל שלך
+                {
+                    DonationId = donation.Id,
+                    WinningPurchaseId = winnerPurchase.Id,
+                    RaffleDate = DateTime.Now // תאריך ההגרלה הנוכחי
+                };
+
+                _context.RandomModel.Add(newRecord);
+
                 winners.Add(new RandomDto()
                 {
                     PurchaseId = winnerPurchase.Id,
                     Name = user.Name,
                     Email = user.Email,
                     Phone = user.Phone,
-                    DonationName = donation.Name
+                    DonationName = donation.Name,
+                    WinnerName = user.Name
                 });
-try 
-    {
-        await SendEmailAsync(user.Email, "מזל טוב! זכית בהגרלה", 
-            $"שלום {user.Name},<br/>זכית עבור התרומה: {donation.Name}.");
-    }
-    catch (Exception ex)
-    {
-        // כדאי להוסיף לוג למקרה ששליחת המייל נכשלה כדי שהתוכנית לא תקרוס
-        Console.WriteLine($"שגיאה בשליחת מייל ל-{user.Email}: {ex.Message}");
-    }            }
+
+
+                try
+                {
+                    await SendEmailAsync(user.Email, "מזל טוב! זכית בהגרלה",
+                        $"שלום {user.Name},<br/>זכית עבור התרומה: {donation.Name}.");
+                }
+                catch (Exception ex)
+                {
+                    // כדאי להוסיף לוג למקרה ששליחת המייל נכשלה כדי שהתוכנית לא תקרוס
+                    Console.WriteLine($"שגיאה בשליחת מייל ל-{user.Email}: {ex.Message}");
+                }
+            }
+            await _context.SaveChangesAsync();
             return winners;
         }
 

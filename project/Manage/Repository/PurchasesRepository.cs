@@ -27,6 +27,14 @@ namespace project.Manage.Repository
         {
             // חשוב להשתמש ב-Include כדי שנוכל לגשת לשם התרומה/מתנה בדוח
             return await _context.PurchasesModel
+                //.Include(p => p.Donations) // טעינת הישות המקושרת
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<PurchasesModel>> GetPuchasesWithDonation()
+        {
+            // חשוב להשתמש ב-Include כדי שנוכל לגשת לשם התרומה/מתנה בדוח
+            return await _context.PurchasesModel
                 .Include(p => p.Donations) // טעינת הישות המקושרת
                 .ToListAsync();
         }

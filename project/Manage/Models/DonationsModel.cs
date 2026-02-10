@@ -14,7 +14,5 @@
         public string? ImageUrl { get; set; }
 
         public ICollection<PurchasesModel> PurchasesModel { get; set; } = new List<PurchasesModel>();
-
-
     }
 }
