@@ -26,7 +26,8 @@ namespace project.Manage.Services
             {
                 Name = donor.Name,
                 Email = donor.Email,
-                Phone = donor.Phone
+                Phone = donor.Phone,
+                ImgUrl = donor.ImgUrl
             };
 
         }
@@ -63,12 +64,17 @@ namespace project.Manage.Services
                 donor.Phone = donorToUp.Phone;
             else
                 donor.Phone = donor.Phone;
+            if (!string.IsNullOrEmpty(donorToUp.ImgUrl))
+                donor.ImgUrl = donorToUp.ImgUrl ;
+            else
+                donor.ImgUrl = donor.ImgUrl;
 
             var updatedDonor = new DonorsUpdateDto
             {
                 Name = donor.Name,
                 Email = donor.Email,
-                Phone = donor.Phone
+                Phone = donor.Phone,
+                ImgUrl = donor.ImgUrl
             };
 
             await _donorsRepository.UpdateDonor(donor);
@@ -89,6 +95,7 @@ namespace project.Manage.Services
                 Email = donors.Email,
                 Name = donors.Name,
                 Phone = donors.Phone,
+                ImgUrl = donors.ImgUrl,
                 Donations = donors.Donations.Select(don => new DonationDto
                 {
                     DescriptionDonation = don.Description,

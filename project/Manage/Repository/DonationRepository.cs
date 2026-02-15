@@ -28,12 +28,13 @@ namespace project.Manage.Repository
                 Description = d.Description,
                 PriceTiket = d.PriceTiket,
                 CategoryName = d.Category.Name,
-                DonorsId = d.DonorsId,
+                DonorsId = (int)d.DonorsId,
                 DonorName = d.Donors.Name,
                 ImageUrl = d.ImageUrl,
                 WinnerName = _context.RandomModel
                 .Where(r => r.DonationId == d.Id)
                 .Select(r => r.WinningPurchase.User.Name) // שולפים את שם המשתמש מהרכישה הזוכה
+                //.OrderBy()
                 .FirstOrDefault() ?? "אין זוכה עדיין"
 
             }).ToListAsync();
@@ -123,8 +124,8 @@ namespace project.Manage.Repository
                 Name = d.Name,
                 Description = d.Description,
                 PriceTiket = d.PriceTiket,
-                CategoryId = d.CategoryId,
-                DonorsId = d.DonorsId,
+                CategoryId = (int)d.CategoryId,
+                DonorsId = (int)d.DonorsId,
                 ImageUrl = d.ImageUrl,
                 Purchases = d.PurchasesModel.Select(p => new PurchasesDto
                 {
@@ -144,37 +145,30 @@ namespace project.Manage.Repository
             return await _context.CategoryModel.ToListAsync();
         }
 
-        public async Task<IEnumerable<DonationsModel>> FilterDonation(DonationFilterParams DonorFilterParams)
+        public async Task<IEnumerable<GetDonationDto>> FilterDonation(DonationFilterParams DonorFilterParams)
         {
-            var query = _context.DonationsModel
-                .Include(d => d.Donors)
-                .Include(d => d.PurchasesModel)
-                .Include(d => d.Category)
-                .AsQueryable();
+            var query = _context.DonationsModel.Include(d => d.Donors).Include(d => d.PurchasesModel).Include(d => d.Category).AsQueryable();
+            if (!string.IsNullOrEmpty(DonorFilterParams.NameDonation)) { var searchName = DonorFilterParams.NameDonation.ToLower(); query = query.Where(d => d.Name.ToLower().Contains(searchName)); }
 
-            // סינון לפי שם המתנה - הוספת ToLower למניעת בעיות אותיות
-            if (!string.IsNullOrEmpty(DonorFilterParams.NameDonation))
+            if (DonorFilterParams.numPurchases.HasValue) { query = query.Where(d => d.PurchasesModel.Count >= DonorFilterParams.numPurchases.Value); }
+
+            if (!string.IsNullOrEmpty(DonorFilterParams.NameDonor)) { var searchDonor = DonorFilterParams.NameDonor.ToLower(); query = query.Where(d => d.Donors != null && d.Donors.Name.ToLower().Contains(searchDonor)); }
+            return await query.Select(d => new GetDonationDto
             {
-                var searchName = DonorFilterParams.NameDonation.ToLower();
-                query = query.Where(d => d.Name.ToLower().Contains(searchName));
-            }
+                Id = d.Id,
+                Name = d.Name,
+                Description = d.Description,
+                PriceTiket = d.PriceTiket,
+                ImageUrl = d.ImageUrl,
+                DonorsId = d.DonorsId,
+                DonorName = d.Donors != null ? d.Donors.Name : "לא ידוע",
+                CategoryName = d.Category != null ? d.Category.Name : "ללא קטגוריה",
+                WinnerName = _context.RandomModel.Where(r => r.DonationId == d.Id).Select(r => r.WinningPurchase.User.Name).FirstOrDefault() ?? "אין זוכה עדיין"
 
-            // סינון לפי כמות רכישות
-            if (DonorFilterParams.numPurchases.HasValue)
-            {
-                query = query.Where(d => d.PurchasesModel.Count >= DonorFilterParams.numPurchases.Value);
-            }
+            }).ToListAsync();
 
-            // סינון לפי שם התורם - הגנה מפני Null בתוך השאילתה
-            if (!string.IsNullOrEmpty(DonorFilterParams.NameDonor))
-            {
-                var searchDonor = DonorFilterParams.NameDonor.ToLower();
-                // בדיקה שהתורם קיים לפני שניגשים לשם שלו
-                query = query.Where(d => d.Donors != null && d.Donors.Name.ToLower().Contains(searchDonor));
-            }
-
-            return await query.ToListAsync();
         }
+
     }
 }
 

@@ -8,7 +8,7 @@ using project.Models.Customer;
 
 namespace project.Manage.Services
 {
-    public class PurchasesService:IPurchasesService
+    public class PurchasesService : IPurchasesService
     {
         private readonly IPurchasesRepository _purchasesRepository;
         public PurchasesService(IPurchasesRepository purchasesRepository)
@@ -41,7 +41,7 @@ namespace project.Manage.Services
                 DonationId = Purchases.DonationId,
                 DonationName = Purchases.Donations?.Name ?? "מתנה הוסרה",
                 Price = Purchases.Donations?.PriceTiket ?? 0,
-                ShoppingCartId = Purchases.ShoppingCartId ?? 0 
+                ShoppingCartId = Purchases.ShoppingCartId ?? 0
             };
         }
 
@@ -63,26 +63,16 @@ namespace project.Manage.Services
         public async Task<byte[]> GetRevenueExcelFileAsync()
         {
             // 1. שליפת הנתונים מהריפוזיטורי
-            var allPurchases = await _purchasesRepository.GetPuchases();
+            var allPurchases = await _purchasesRepository.GetPuchasesWithDonation();
             if (allPurchases == null || !allPurchases.Any())
             {
                 return Array.Empty<byte>(); // החזרת מערך ריק אם אין רכישות
             }
             // 2. יצירת הדוח והתאמה ל-DTO שלך
-            var reportData = allPurchases
-                .GroupBy(p => p.DonationId)
-                .Select(group => { var firstItem = group.First(); return
-                 new TotalRevenueDto
-                 {
-                     GiftName = group.First().Donations?.Name ?? $"מתנה (ID: {group.Key})",
-                     TotalRevenue = group.Sum(p => p.Donations.PriceTiket) // כאן תוודאי ש-Price הוא השם במודל הרכישות
-                 };
-                 }).ToList();
-
-            // 3. שליחה להלפר שמתבסס על ה-DTO המעודכן
+            var reportData = allPurchases.GroupBy(p => p.DonationId).Select(group => { var firstItem = group.FirstOrDefault(); 
+                return new TotalRevenueDto { GiftName = firstItem?.Donations?.Name ?? "מתנה ללא שם", 
+                TotalRevenue = group.Sum(p => p.Donations != null ? p.Donations.PriceTiket : 0) }; }).ToList();            // 3. שליחה להלפר שמתבסס על ה-DTO המעודכן
             return TotalRevenue.CreateRevenueExcel(reportData);
         }
-
-
     }
 }

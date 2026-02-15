@@ -66,7 +66,7 @@ namespace project.Customer.Repositories
 
                     ImageUrl = item.Donations != null ? item.Donations.ImageUrl : string.Empty,
 
-                    Category = item.Donations != null ? item.Donations.CategoryId : 0,
+                    Category = (int)(item.Donations != null ? item.Donations.CategoryId : 0),
 
                     Quantity = item.Quantity,
                     ShoppingCartId = item.ShoppingCartId

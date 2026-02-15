@@ -16,6 +16,6 @@ namespace project.Manage.Interfaces
         //Task<ActionResult<IEnumerable<int>>> GetIdByEmail(string email);
         Task<IEnumerable<DonorsModel>> getDonors();
         Task<IEnumerable<CategoryModel>> GetAllCategories();
-        Task<IEnumerable<DonationsModel>> FilterDonation(DonationFilterParams DonorFilterParams);
+        Task<IEnumerable<GetDonationDto>> FilterDonation(DonationFilterParams DonorFilterParams);
     }
 }

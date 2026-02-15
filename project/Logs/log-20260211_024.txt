@@ -1,0 +1,4 @@
+2026-02-11 19:35:50.939 +02:00 [INF] Starting Store API application
+2026-02-11 19:35:52.172 +02:00 [INF] Store API is now running
+2026-02-11 19:37:58.202 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.

@@ -1,0 +1,350 @@
+2026-02-10 21:43:34.126 +02:00 [INF] Starting Store API application
+2026-02-10 21:43:36.226 +02:00 [INF] Store API is now running
+2026-02-10 22:34:29.145 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:34:29'.
+2026-02-10 22:34:29.388 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:34:29'.
+2026-02-10 22:34:29.689 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:34:29'.
+2026-02-10 22:34:31.450 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:34:31'.
+2026-02-10 22:34:31.620 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:34:31'.
+2026-02-10 22:34:31.668 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:34:31'.
+2026-02-10 22:34:38.718 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:34:38'.
+2026-02-10 22:34:38.965 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:34:38'.
+2026-02-10 22:34:39.126 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:34:39'.
+2026-02-10 22:34:52.117 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:34:52'.
+2026-02-10 22:34:52.306 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:34:52'.
+2026-02-10 22:34:52.612 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:34:52'.
+2026-02-10 22:34:57.114 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:34:57'.
+2026-02-10 22:34:57.446 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:34:57'.
+2026-02-10 22:34:57.838 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:34:57'.
+2026-02-10 22:35:26.077 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:35:26'.
+2026-02-10 22:35:26.246 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:35:26'.
+2026-02-10 22:35:26.304 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:35:26'.
+2026-02-10 22:35:33.068 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:35:33'.
+2026-02-10 22:35:33.379 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:35:33'.
+2026-02-10 22:35:33.684 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:35:33'.
+2026-02-10 22:35:37.952 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:35:37'.
+2026-02-10 22:35:38.132 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:35:38'.
+2026-02-10 22:35:38.423 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:35:38'.
+2026-02-10 22:36:09.148 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:36:09'.
+2026-02-10 22:36:09.169 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:36:09'.
+2026-02-10 22:36:09.432 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:36:09'.
+2026-02-10 22:37:23.627 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:37:23'.
+2026-02-10 22:37:25.713 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:37:25'.
+2026-02-10 22:37:27.622 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:37:27'.
+2026-02-10 22:37:30.142 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:37:30'.
+2026-02-10 22:38:56.767 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:38:56'.
+2026-02-10 22:38:56.883 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:38:56'.
+2026-02-10 22:38:57.065 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:38:57'.
+2026-02-10 22:38:59.724 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:38:59'.
+2026-02-10 22:39:01.772 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:01'.
+2026-02-10 22:39:04.772 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:04'.
+2026-02-10 22:39:20.909 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:20'.
+2026-02-10 22:39:21.061 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:21'.
+2026-02-10 22:39:21.150 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:21'.
+2026-02-10 22:39:34.430 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:34'.
+2026-02-10 22:39:34.448 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:34'.
+2026-02-10 22:39:34.465 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:34'.
+2026-02-10 22:39:34.534 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:34'.
+2026-02-10 22:39:35.176 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:35'.
+2026-02-10 22:39:35.784 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:35'.
+2026-02-10 22:39:35.811 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:35'.
+2026-02-10 22:39:35.846 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:35'.
+2026-02-10 22:39:36.495 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:36'.
+2026-02-10 22:39:36.547 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:36'.
+2026-02-10 22:39:36.603 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:36'.
+2026-02-10 22:39:37.164 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:37'.
+2026-02-10 22:39:37.343 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:37'.
+2026-02-10 22:39:41.286 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:41'.
+2026-02-10 22:39:41.326 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:41'.
+2026-02-10 22:39:41.376 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:41'.
+2026-02-10 22:39:41.424 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:41'.
+2026-02-10 22:39:41.464 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:41'.
+2026-02-10 22:39:42.007 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:42'.
+2026-02-10 22:39:42.160 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:42'.
+2026-02-10 22:39:42.289 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:42'.
+2026-02-10 22:39:42.434 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:42'.
+2026-02-10 22:39:42.560 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:42'.
+2026-02-10 22:39:43.718 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:43'.
+2026-02-10 22:39:46.108 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:46'.
+2026-02-10 22:39:46.268 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:46'.
+2026-02-10 22:39:46.517 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:46'.
+2026-02-10 22:39:47.212 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:39:47'.
+2026-02-10 22:40:00.037 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:00'.
+2026-02-10 22:40:03.452 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:03'.
+2026-02-10 22:40:07.665 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:07'.
+2026-02-10 22:40:11.704 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:11'.
+2026-02-10 22:40:11.890 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:11'.
+2026-02-10 22:40:12.495 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:12'.
+2026-02-10 22:40:12.686 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:12'.
+2026-02-10 22:40:14.422 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:14'.
+2026-02-10 22:40:14.495 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:14'.
+2026-02-10 22:40:14.852 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:14'.
+2026-02-10 22:40:15.180 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:15'.
+2026-02-10 22:40:15.337 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:15'.
+2026-02-10 22:40:15.477 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:15'.
+2026-02-10 22:40:34.477 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:34'.
+2026-02-10 22:40:34.701 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:34'.
+2026-02-10 22:40:34.857 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:34'.
+2026-02-10 22:40:35.030 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:35'.
+2026-02-10 22:40:35.185 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:35'.
+2026-02-10 22:40:35.385 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:35'.
+2026-02-10 22:40:35.574 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:35'.
+2026-02-10 22:40:35.807 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:35'.
+2026-02-10 22:40:35.873 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:35'.
+2026-02-10 22:40:35.904 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:35'.
+2026-02-10 22:40:35.953 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:35'.
+2026-02-10 22:40:36.004 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:36'.
+2026-02-10 22:40:36.057 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:36'.
+2026-02-10 22:40:38.862 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:38'.
+2026-02-10 22:40:39.086 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:39'.
+2026-02-10 22:40:39.255 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:39'.
+2026-02-10 22:40:39.407 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:39'.
+2026-02-10 22:40:39.604 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:39'.
+2026-02-10 22:40:39.910 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:39'.
+2026-02-10 22:40:41.172 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:41'.
+2026-02-10 22:40:41.407 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:41'.
+2026-02-10 22:40:41.563 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:41'.
+2026-02-10 22:40:43.412 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:43'.
+2026-02-10 22:40:44.077 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:44'.
+2026-02-10 22:40:44.311 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:44'.
+2026-02-10 22:40:45.047 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 20:40:45'.
+2026-02-10 23:01:11.739 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:11'.
+2026-02-10 23:01:15.394 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:15'.
+2026-02-10 23:01:15.477 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:15'.
+2026-02-10 23:01:15.484 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:15'.
+2026-02-10 23:01:15.523 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:15'.
+2026-02-10 23:01:15.551 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:15'.
+2026-02-10 23:01:15.602 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:15'.
+2026-02-10 23:01:15.612 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:15'.
+2026-02-10 23:01:15.886 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:15'.
+2026-02-10 23:01:16.485 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:16'.
+2026-02-10 23:01:16.513 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:16'.
+2026-02-10 23:01:16.559 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:16'.
+2026-02-10 23:01:16.580 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:16'.
+2026-02-10 23:01:16.609 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:16'.
+2026-02-10 23:01:16.641 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:16'.
+2026-02-10 23:01:18.484 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:18'.
+2026-02-10 23:01:18.526 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:18'.
+2026-02-10 23:01:18.584 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:18'.
+2026-02-10 23:01:18.694 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:18'.
+2026-02-10 23:01:18.942 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:18'.
+2026-02-10 23:01:19.373 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:19'.
+2026-02-10 23:01:19.875 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:19'.
+2026-02-10 23:01:20.485 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:20'.
+2026-02-10 23:01:20.512 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:20'.
+2026-02-10 23:01:20.543 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:20'.
+2026-02-10 23:01:20.580 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:20'.
+2026-02-10 23:01:20.612 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:20'.
+2026-02-10 23:01:20.994 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:20'.
+2026-02-10 23:01:21.055 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:21'.
+2026-02-10 23:01:21.155 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:21'.
+2026-02-10 23:01:21.165 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:21'.
+2026-02-10 23:01:21.301 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:21'.
+2026-02-10 23:01:22.030 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:22'.
+2026-02-10 23:01:22.632 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:22'.
+2026-02-10 23:01:22.665 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:22'.
+2026-02-10 23:01:22.695 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:22'.
+2026-02-10 23:01:22.724 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:22'.
+2026-02-10 23:01:29.904 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:29'.
+2026-02-10 23:01:29.920 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:29'.
+2026-02-10 23:01:29.971 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:29'.
+2026-02-10 23:01:30.038 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:30'.
+2026-02-10 23:01:30.146 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:30'.
+2026-02-10 23:01:30.168 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:30'.
+2026-02-10 23:01:30.179 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:30'.
+2026-02-10 23:01:30.459 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:30'.
+2026-02-10 23:01:31.074 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:31'.
+2026-02-10 23:01:31.105 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:31'.
+2026-02-10 23:01:31.139 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:31'.
+2026-02-10 23:01:31.165 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:31'.
+2026-02-10 23:01:31.195 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:31'.
+2026-02-10 23:01:31.226 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:01:31'.
+2026-02-10 23:03:32.766 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:03:32'.
+2026-02-10 23:06:12.158 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:06:12'.
+2026-02-10 23:06:12.241 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:06:12'.
+2026-02-10 23:09:02.396 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:09:02'.
+2026-02-10 23:09:02.403 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:09:02'.
+2026-02-10 23:09:24.760 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:09:24'.
+2026-02-10 23:09:25.191 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:09:25'.
+2026-02-10 23:10:01.739 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:10:01'.
+2026-02-10 23:10:01.742 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:10:01'.
+2026-02-10 23:10:36.450 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:10:36'.
+2026-02-10 23:10:36.464 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:10:36'.
+2026-02-10 23:10:53.366 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:10:53'.
+2026-02-10 23:10:53.457 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:10:53'.
+2026-02-10 23:10:53.467 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:10:53'.
+2026-02-10 23:10:53.493 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:10:53'.
+2026-02-10 23:10:53.533 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:10:53'.
+2026-02-10 23:10:53.593 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:10:53'.
+2026-02-10 23:10:53.841 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:10:53'.
+2026-02-10 23:10:53.999 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:10:53'.
+2026-02-10 23:10:54.142 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:10:54'.
+2026-02-10 23:10:54.294 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:10:54'.
+2026-02-10 23:10:54.912 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:10:54'.
+2026-02-10 23:10:54.940 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:10:54'.
+2026-02-10 23:11:32.094 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:11:32'.
+2026-02-10 23:11:32.203 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:11:32'.
+2026-02-10 23:14:05.635 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:14:05'.
+2026-02-10 23:14:05.946 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:14:05'.
+2026-02-10 23:18:06.522 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:18:06'.
+2026-02-10 23:20:12.046 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:20:12'.
+2026-02-10 23:20:12.103 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:20:12'.
+2026-02-10 23:20:39.488 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:20:39'.
+2026-02-10 23:20:39.524 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:20:39'.
+2026-02-10 23:20:45.284 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:20:45'.
+2026-02-10 23:22:07.897 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:22:07'.
+2026-02-10 23:22:07.946 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:22:07'.
+2026-02-10 23:22:17.283 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:22:17'.
+2026-02-10 23:22:17.349 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:22:17'.
+2026-02-10 23:22:41.389 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:22:41'.
+2026-02-10 23:22:57.220 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:22:57'.
+2026-02-10 23:22:57.288 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:22:57'.
+2026-02-10 23:23:00.885 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:23:00'.
+2026-02-10 23:23:15.886 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:23:15'.
+2026-02-10 23:23:15.945 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:23:15'.
+2026-02-10 23:23:39.391 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:23:39'.
+2026-02-10 23:23:39.491 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:23:39'.
+2026-02-10 23:23:45.982 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:23:45'.
+2026-02-10 23:24:14.782 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:24:14'.
+2026-02-10 23:24:26.640 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:24:26'.
+2026-02-10 23:24:26.729 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:24:26'.
+2026-02-10 23:24:34.551 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:24:34'.
+2026-02-10 23:24:44.543 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:24:44'.
+2026-02-10 23:24:44.596 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:24:44'.
+2026-02-10 23:27:14.753 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:27:14'.
+2026-02-10 23:27:14.949 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:27:14'.
+2026-02-10 23:27:55.657 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:27:55'.
+2026-02-10 23:27:55.762 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:27:55'.
+2026-02-10 23:28:00.711 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:28:00'.
+2026-02-10 23:28:00.755 +02:00 [WRN] JWT Authentication failed: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/02/2026 20:31:37', Current time (UTC): '10/02/2026 21:28:00'.
+2026-02-10 23:28:08.025 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:28:08.029 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:28:29.459 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:28:29.468 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:29:44.153 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:29:44.276 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:30:52.701 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:30:52.702 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:31:10.274 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:31:10.322 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:32:00.385 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:32:00.290 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:32:03.787 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:32:03.824 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:32:44.925 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:32:44.943 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:33:14.039 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:33:14.199 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:35:04.225 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:35:04.285 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:35:21.779 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:35:21.845 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:36:13.161 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:36:13.189 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:36:34.750 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:36:34.859 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:36:35.505 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:36:35.542 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:39:52.290 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:39:52.305 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:44:35.900 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:44:35.900 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:45:00.307 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:45:00.323 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:45:30.984 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:45:31.017 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:46:22.943 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:46:23.075 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:46:35.727 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:46:35.694 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:46:38.463 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:46:38.550 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:46:48.109 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:46:48.175 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:46:51.654 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:46:51.738 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:46:58.686 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:46:58.771 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:47:00.948 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:47:00.990 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:47:16.344 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:47:16.372 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:49:56.344 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:49:56.347 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:50:08.380 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:50:08.437 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:50:28.010 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:50:53.514 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:51:52.456 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:51:52.530 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:52:48.157 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:52:48.196 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:53:46.651 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:56:08.997 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:56:19.618 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2026-02-10 23:58:14.680 +02:00 [WRN] JWT Authentication failed: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EncodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.

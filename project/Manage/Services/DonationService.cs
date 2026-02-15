@@ -70,7 +70,7 @@ namespace project.Manage.Services
                 Name = donation.Name,
                 ImageUrl = donation.ImageUrl,
                 Description = donation.Description,
-                CategoryId = donation.CategoryId,
+                CategoryId = (int)donation.CategoryId,
                 DonorsId = donation.DonorsId,
                 PriceTiket = donation.PriceTiket
             };
@@ -100,13 +100,10 @@ namespace project.Manage.Services
             return await _donationRepository.SearchDonations(donationName, donorName, minPurchases);
         }
 
-        public async Task<IEnumerable<GetDonationDto>> FilterDonation(DonationFilterParams DonorFilterParams)
-        {
-            var donaotinFilter =  await _donationRepository.FilterDonation(DonorFilterParams);
-            return donaotinFilter.Select(d => MapToDonationDto(d)).ToList();
-
+        public async Task<IEnumerable<GetDonationDto>> FilterDonation(DonationFilterParams DonorFilterParams) 
+        { 
+            return await _donationRepository.FilterDonation(DonorFilterParams); 
         }
-
         public static GetDonationDto MapToDonationDto(DonationsModel donation)
         {
             return new GetDonationDto
@@ -117,11 +114,9 @@ namespace project.Manage.Services
                 PriceTiket = donation.PriceTiket,
                 DonorsId = donation.DonorsId,
                 ImageUrl = donation.ImageUrl,
-                // תיקון: הוספת שם התורם מהאובייקט המקושר (עם הגנה מפני Null)
                 DonorName = donation.Donors?.Name ?? "לא ידוע",
-
-                // הגנה מפני Null בשם הקטגוריה (מונע את השגיאה שראינו קודם)
-                CategoryName = donation.Category?.Name ?? "ללא קטגוריה"
+                CategoryName = donation.Category?.Name ?? "ללא קטגוריה",
+                WinnerName = "אין זוכה עדיין"
             };
         }
     }

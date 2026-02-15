@@ -41,7 +41,8 @@ namespace project.Manage.Repository
             {
                 Name = donorsDto.Name,
                 Email = donorsDto?.Email,
-                Phone = donorsDto?.Phone
+                Phone = donorsDto?.Phone,
+                ImgUrl = donorsDto?.ImgUrl
             };
             _context.DonorsModel.Add(newDonor);
             await _context.SaveChangesAsync();
